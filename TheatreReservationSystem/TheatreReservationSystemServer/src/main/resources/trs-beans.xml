@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="adminValidator" class="trs.model.validator.AdminValidator"/>
+    <bean id="theatreShowValidator" class="trs.model.validator.TheatreShowValidator"/>
+
+    <bean id="adminRepository" class="trs.persistence.repository.hibernate.AdminRepository">
+        <constructor-arg ref="adminValidator"/>
+    </bean>
+
+    <bean id="theatreShowRepository" class="trs.persistence.repository.hibernate.TheatreShowRepository">
+        <constructor-arg ref="theatreShowValidator"/>
+    </bean>
+
+    <bean id="service" class="trs.server.TrsServiceImpl">
+        <constructor-arg ref="adminRepository"/>
+        <constructor-arg ref="theatreShowRepository"/>
+    </bean>
+
+</beans>

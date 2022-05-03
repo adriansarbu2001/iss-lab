@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trs.client.controller.LoginController">
    <children>
       <GridPane>
         <columnConstraints>
@@ -33,22 +33,18 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1">
+            <TextField fx:id="textFieldUsername" GridPane.columnIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
+            <PasswordField fx:id="passwordFieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </VBox.margin>
       </GridPane>
-      <Button mnemonicParsing="false" text="Autentificare">
+      <Button fx:id="buttonAutentificare" mnemonicParsing="false" onAction="#onButtonAutentificareClick" text="Autentificare">
          <font>
             <Font size="18.0" />
          </font>

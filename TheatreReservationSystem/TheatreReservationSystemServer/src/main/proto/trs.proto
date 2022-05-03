@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package chat.protocol;
+option java_package = "trs.network.protobuffprotocol";
+option java_outer_classname = "TrsProtobufs";
+
+service TrsService {
+  rpc addTheatreShowObserver(stream TrsRequest) returns (stream TrsResponse);
+  rpc login(TrsRequest) returns (TrsResponse);
+  rpc logout(TrsRequest) returns (TrsResponse);
+  rpc findAllTheatreShow(TrsRequest) returns (TrsResponse);
+  rpc saveTheatreShow(TrsRequest) returns (TrsResponse);
+  rpc updateTheatreShow(TrsRequest) returns (TrsResponse);
+  rpc deleteTheatreShow(TrsRequest) returns (TrsResponse);
+}
+
+message DateDto {
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}
+
+message AdminDto {
+  int64 id = 1;
+  string username = 2;
+  string password = 3;
+}
+
+message TheatreShowDto {
+  int64 id = 1;
+  string name = 2;
+  DateDto dateDto = 3;
+  AdminDto adminDto = 4;
+}
+
+message TrsRequest {
+  // One of the following will be filled in, depending on the type.
+  oneof payload {
+    AdminDto adminDto = 1;
+    TheatreShowDto theatreShowDto = 2;
+    int64 id = 3;
+  }
+}
+
+message TrsResponse {
+  enum Type {UNKNOWN = 0; OK = 1; ERROR = 2; RELOAD_THEATRE_SHOWS = 3;}
+  Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+  string error = 2;
+  repeated TheatreShowDto theatreShowDtos = 3;
+  AdminDto adminDto = 4;
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'TheatreReservationSystem'
+include 'TheatreReservationSystemModel'
+include 'TheatreReservationSystemPersistence'
+include 'TheatreReservationSystemModel'
+include 'TheatreReservationSystemPersistence'
+include 'TheatreReservationSystemServer'
+include 'TheatreReservationSystemClient'
+

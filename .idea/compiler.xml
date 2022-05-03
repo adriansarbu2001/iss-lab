@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="TheatreReservationSystemModel.main" target="16" />
+      <module name="TheatreReservationSystemModel.test" target="16" />
+      <module name="TheatreReservationSystemModel2" target="16" />
+      <module name="TheatreReservationSystemPersistence.main" target="16" />
+      <module name="TheatreReservationSystemPersistence.test" target="16" />
+      <module name="TheatreReservationSystemPersistence2" target="16" />
+      <module name="TheatreReservationSystemServer.main" target="16" />
+      <module name="TheatreReservationSystemServer.src" target="16" />
+      <module name="TheatreReservationSystemServer.test" target="16" />
+      <module name="TheatreReservationSystemServer2" target="16" />
+      <module name="untitled" target="16" />
+      <module name="untitled.main" target="16" />
+      <module name="untitled.test" target="16" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
