@@ -44,10 +44,10 @@ public class AdminController {
 
     @FXML
     public void initialize() {
-        initializeTableViewMatches();
+        initializeTableViewTheatreShows();
     }
 
-    private void initializeTableViewMatches() {
+    private void initializeTableViewTheatreShows() {
         tableColumnIdSpectacol.setCellValueFactory(new PropertyValueFactory<>("Id"));
         tableColumnNume.setCellValueFactory(new PropertyValueFactory<>("Name"));
         tableColumnData.setCellValueFactory(new PropertyValueFactory<>("Date"));

@@ -9,6 +9,7 @@ import trs.model.validator.ValidatorException;
 import trs.persistence.ITheatreShowRepository;
 import trs.persistence.repository.RepositoryException;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class TheatreShowRepository implements ITheatreShowRepository {
@@ -99,15 +100,15 @@ public class TheatreShowRepository implements ITheatreShowRepository {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                result = session.createQuery("from TheatreShow where id = ?", TheatreShow.class)
-                        .setParameter(0, id)
+                result = session.createQuery("select ts from TheatreShow ts join fetch ts.admin where ts.id = ?1", TheatreShow.class)
+                        .setParameter(1, id)
                         .uniqueResult();
                 tx.commit();
             } catch (RuntimeException ex) {
                 System.err.println("Find one error " + ex);
                 if (tx != null)
                     tx.rollback();
-                throw new RepositoryException("Eroare la gasirea unui spectacol!");
+                throw new RepositoryException("Eroare la gasirea spectacolului!");
             }
         }
 
@@ -158,5 +159,30 @@ public class TheatreShowRepository implements ITheatreShowRepository {
         }
 
         logger.traceExit();
+    }
+
+    @Override
+    public TheatreShow findBy(LocalDate date) throws RepositoryException {
+        logger.traceEntry();
+
+        TheatreShow result = null;
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                result = session.createQuery("select ts from TheatreShow ts join fetch ts.admin where ts.date = ?1", TheatreShow.class)
+                        .setParameter(1, date)
+                        .uniqueResult();
+                tx.commit();
+            } catch (RuntimeException ex) {
+                System.err.println("Find one error " + ex);
+                if (tx != null)
+                    tx.rollback();
+                throw new RepositoryException("Eroare la gasirea spectacolului!");
+            }
+        }
+
+        logger.traceExit();
+        return result;
     }
 }

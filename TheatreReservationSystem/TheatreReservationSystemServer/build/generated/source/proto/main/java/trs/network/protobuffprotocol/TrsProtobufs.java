@@ -2482,6 +2482,2520 @@ public final class TrsProtobufs {
 
   }
 
+  public interface SeatDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:chat.protocol.SeatDto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <code>int32 lodge = 2;</code>
+     * @return The lodge.
+     */
+    int getLodge();
+
+    /**
+     * <code>int32 row = 3;</code>
+     * @return The row.
+     */
+    int getRow();
+
+    /**
+     * <code>int32 number = 4;</code>
+     * @return The number.
+     */
+    int getNumber();
+
+    /**
+     * <code>float price = 5;</code>
+     * @return The price.
+     */
+    float getPrice();
+  }
+  /**
+   * Protobuf type {@code chat.protocol.SeatDto}
+   */
+  public static final class SeatDto extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:chat.protocol.SeatDto)
+      SeatDtoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SeatDto.newBuilder() to construct.
+    private SeatDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SeatDto() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SeatDto();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SeatDto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              lodge_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              row_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              number_ = input.readInt32();
+              break;
+            }
+            case 45: {
+
+              price_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SeatDto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SeatDto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto.class, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int LODGE_FIELD_NUMBER = 2;
+    private int lodge_;
+    /**
+     * <code>int32 lodge = 2;</code>
+     * @return The lodge.
+     */
+    @java.lang.Override
+    public int getLodge() {
+      return lodge_;
+    }
+
+    public static final int ROW_FIELD_NUMBER = 3;
+    private int row_;
+    /**
+     * <code>int32 row = 3;</code>
+     * @return The row.
+     */
+    @java.lang.Override
+    public int getRow() {
+      return row_;
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 4;
+    private int number_;
+    /**
+     * <code>int32 number = 4;</code>
+     * @return The number.
+     */
+    @java.lang.Override
+    public int getNumber() {
+      return number_;
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 5;
+    private float price_;
+    /**
+     * <code>float price = 5;</code>
+     * @return The price.
+     */
+    @java.lang.Override
+    public float getPrice() {
+      return price_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (lodge_ != 0) {
+        output.writeInt32(2, lodge_);
+      }
+      if (row_ != 0) {
+        output.writeInt32(3, row_);
+      }
+      if (number_ != 0) {
+        output.writeInt32(4, number_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        output.writeFloat(5, price_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (lodge_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, lodge_);
+      }
+      if (row_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, row_);
+      }
+      if (number_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, number_);
+      }
+      if (java.lang.Float.floatToRawIntBits(price_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, price_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof trs.network.protobuffprotocol.TrsProtobufs.SeatDto)) {
+        return super.equals(obj);
+      }
+      trs.network.protobuffprotocol.TrsProtobufs.SeatDto other = (trs.network.protobuffprotocol.TrsProtobufs.SeatDto) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (getLodge()
+          != other.getLodge()) return false;
+      if (getRow()
+          != other.getRow()) return false;
+      if (getNumber()
+          != other.getNumber()) return false;
+      if (java.lang.Float.floatToIntBits(getPrice())
+          != java.lang.Float.floatToIntBits(
+              other.getPrice())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + LODGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLodge();
+      hash = (37 * hash) + ROW_FIELD_NUMBER;
+      hash = (53 * hash) + getRow();
+      hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getNumber();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getPrice());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(trs.network.protobuffprotocol.TrsProtobufs.SeatDto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code chat.protocol.SeatDto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:chat.protocol.SeatDto)
+        trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SeatDto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SeatDto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                trs.network.protobuffprotocol.TrsProtobufs.SeatDto.class, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder.class);
+      }
+
+      // Construct using trs.network.protobuffprotocol.TrsProtobufs.SeatDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        lodge_ = 0;
+
+        row_ = 0;
+
+        number_ = 0;
+
+        price_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SeatDto_descriptor;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getDefaultInstanceForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto build() {
+        trs.network.protobuffprotocol.TrsProtobufs.SeatDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto buildPartial() {
+        trs.network.protobuffprotocol.TrsProtobufs.SeatDto result = new trs.network.protobuffprotocol.TrsProtobufs.SeatDto(this);
+        result.id_ = id_;
+        result.lodge_ = lodge_;
+        result.row_ = row_;
+        result.number_ = number_;
+        result.price_ = price_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof trs.network.protobuffprotocol.TrsProtobufs.SeatDto) {
+          return mergeFrom((trs.network.protobuffprotocol.TrsProtobufs.SeatDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(trs.network.protobuffprotocol.TrsProtobufs.SeatDto other) {
+        if (other == trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.getLodge() != 0) {
+          setLodge(other.getLodge());
+        }
+        if (other.getRow() != 0) {
+          setRow(other.getRow());
+        }
+        if (other.getNumber() != 0) {
+          setNumber(other.getNumber());
+        }
+        if (other.getPrice() != 0F) {
+          setPrice(other.getPrice());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        trs.network.protobuffprotocol.TrsProtobufs.SeatDto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (trs.network.protobuffprotocol.TrsProtobufs.SeatDto) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int lodge_ ;
+      /**
+       * <code>int32 lodge = 2;</code>
+       * @return The lodge.
+       */
+      @java.lang.Override
+      public int getLodge() {
+        return lodge_;
+      }
+      /**
+       * <code>int32 lodge = 2;</code>
+       * @param value The lodge to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLodge(int value) {
+        
+        lodge_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 lodge = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLodge() {
+        
+        lodge_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int row_ ;
+      /**
+       * <code>int32 row = 3;</code>
+       * @return The row.
+       */
+      @java.lang.Override
+      public int getRow() {
+        return row_;
+      }
+      /**
+       * <code>int32 row = 3;</code>
+       * @param value The row to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRow(int value) {
+        
+        row_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 row = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRow() {
+        
+        row_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int number_ ;
+      /**
+       * <code>int32 number = 4;</code>
+       * @return The number.
+       */
+      @java.lang.Override
+      public int getNumber() {
+        return number_;
+      }
+      /**
+       * <code>int32 number = 4;</code>
+       * @param value The number to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumber(int value) {
+        
+        number_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumber() {
+        
+        number_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float price_ ;
+      /**
+       * <code>float price = 5;</code>
+       * @return The price.
+       */
+      @java.lang.Override
+      public float getPrice() {
+        return price_;
+      }
+      /**
+       * <code>float price = 5;</code>
+       * @param value The price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrice(float value) {
+        
+        price_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float price = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrice() {
+        
+        price_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:chat.protocol.SeatDto)
+    }
+
+    // @@protoc_insertion_point(class_scope:chat.protocol.SeatDto)
+    private static final trs.network.protobuffprotocol.TrsProtobufs.SeatDto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new trs.network.protobuffprotocol.TrsProtobufs.SeatDto();
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.SeatDto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SeatDto>
+        PARSER = new com.google.protobuf.AbstractParser<SeatDto>() {
+      @java.lang.Override
+      public SeatDto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SeatDto(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SeatDto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SeatDto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SpectatorDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:chat.protocol.SpectatorDto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code chat.protocol.SpectatorDto}
+   */
+  public static final class SpectatorDto extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:chat.protocol.SpectatorDto)
+      SpectatorDtoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SpectatorDto.newBuilder() to construct.
+    private SpectatorDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SpectatorDto() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SpectatorDto();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SpectatorDto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SpectatorDto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SpectatorDto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.class, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 2;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto)) {
+        return super.equals(obj);
+      }
+      trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto other = (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code chat.protocol.SpectatorDto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:chat.protocol.SpectatorDto)
+        trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SpectatorDto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SpectatorDto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.class, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder.class);
+      }
+
+      // Construct using trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_SpectatorDto_descriptor;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getDefaultInstanceForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto build() {
+        trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto buildPartial() {
+        trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto result = new trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto(this);
+        result.id_ = id_;
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) {
+          return mergeFrom((trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto other) {
+        if (other == trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:chat.protocol.SpectatorDto)
+    }
+
+    // @@protoc_insertion_point(class_scope:chat.protocol.SpectatorDto)
+    private static final trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto();
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SpectatorDto>
+        PARSER = new com.google.protobuf.AbstractParser<SpectatorDto>() {
+      @java.lang.Override
+      public SpectatorDto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SpectatorDto(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SpectatorDto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SpectatorDto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReservationDtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:chat.protocol.ReservationDto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     * @return Whether the theatreShowDto field is set.
+     */
+    boolean hasTheatreShowDto();
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     * @return The theatreShowDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto();
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder();
+
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     * @return Whether the seatDto field is set.
+     */
+    boolean hasSeatDto();
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     * @return The seatDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDto();
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtoOrBuilder();
+
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    boolean hasSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return The spectatorDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code chat.protocol.ReservationDto}
+   */
+  public static final class ReservationDto extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:chat.protocol.ReservationDto)
+      ReservationDtoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReservationDto.newBuilder() to construct.
+    private ReservationDto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReservationDto() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReservationDto();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReservationDto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder subBuilder = null;
+              if (theatreShowDto_ != null) {
+                subBuilder = theatreShowDto_.toBuilder();
+              }
+              theatreShowDto_ = input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(theatreShowDto_);
+                theatreShowDto_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder subBuilder = null;
+              if (seatDto_ != null) {
+                subBuilder = seatDto_.toBuilder();
+              }
+              seatDto_ = input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.SeatDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(seatDto_);
+                seatDto_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder subBuilder = null;
+              if (spectatorDto_ != null) {
+                subBuilder = spectatorDto_.toBuilder();
+              }
+              spectatorDto_ = input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spectatorDto_);
+                spectatorDto_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_ReservationDto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_ReservationDto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.class, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
+    public static final int THEATRESHOWDTO_FIELD_NUMBER = 2;
+    private trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto theatreShowDto_;
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     * @return Whether the theatreShowDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasTheatreShowDto() {
+      return theatreShowDto_ != null;
+    }
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     * @return The theatreShowDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto() {
+      return theatreShowDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+    }
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder() {
+      return getTheatreShowDto();
+    }
+
+    public static final int SEATDTO_FIELD_NUMBER = 3;
+    private trs.network.protobuffprotocol.TrsProtobufs.SeatDto seatDto_;
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     * @return Whether the seatDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasSeatDto() {
+      return seatDto_ != null;
+    }
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     * @return The seatDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDto() {
+      return seatDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance() : seatDto_;
+    }
+    /**
+     * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtoOrBuilder() {
+      return getSeatDto();
+    }
+
+    public static final int SPECTATORDTO_FIELD_NUMBER = 4;
+    private trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto spectatorDto_;
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpectatorDto() {
+      return spectatorDto_ != null;
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return The spectatorDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+      return spectatorDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+      return getSpectatorDto();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (theatreShowDto_ != null) {
+        output.writeMessage(2, getTheatreShowDto());
+      }
+      if (seatDto_ != null) {
+        output.writeMessage(3, getSeatDto());
+      }
+      if (spectatorDto_ != null) {
+        output.writeMessage(4, getSpectatorDto());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (theatreShowDto_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTheatreShowDto());
+      }
+      if (seatDto_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getSeatDto());
+      }
+      if (spectatorDto_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getSpectatorDto());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof trs.network.protobuffprotocol.TrsProtobufs.ReservationDto)) {
+        return super.equals(obj);
+      }
+      trs.network.protobuffprotocol.TrsProtobufs.ReservationDto other = (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (hasTheatreShowDto() != other.hasTheatreShowDto()) return false;
+      if (hasTheatreShowDto()) {
+        if (!getTheatreShowDto()
+            .equals(other.getTheatreShowDto())) return false;
+      }
+      if (hasSeatDto() != other.hasSeatDto()) return false;
+      if (hasSeatDto()) {
+        if (!getSeatDto()
+            .equals(other.getSeatDto())) return false;
+      }
+      if (hasSpectatorDto() != other.hasSpectatorDto()) return false;
+      if (hasSpectatorDto()) {
+        if (!getSpectatorDto()
+            .equals(other.getSpectatorDto())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      if (hasTheatreShowDto()) {
+        hash = (37 * hash) + THEATRESHOWDTO_FIELD_NUMBER;
+        hash = (53 * hash) + getTheatreShowDto().hashCode();
+      }
+      if (hasSeatDto()) {
+        hash = (37 * hash) + SEATDTO_FIELD_NUMBER;
+        hash = (53 * hash) + getSeatDto().hashCode();
+      }
+      if (hasSpectatorDto()) {
+        hash = (37 * hash) + SPECTATORDTO_FIELD_NUMBER;
+        hash = (53 * hash) + getSpectatorDto().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code chat.protocol.ReservationDto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:chat.protocol.ReservationDto)
+        trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_ReservationDto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_ReservationDto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.class, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder.class);
+      }
+
+      // Construct using trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = null;
+        } else {
+          theatreShowDto_ = null;
+          theatreShowDtoBuilder_ = null;
+        }
+        if (seatDtoBuilder_ == null) {
+          seatDto_ = null;
+        } else {
+          seatDto_ = null;
+          seatDtoBuilder_ = null;
+        }
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = null;
+        } else {
+          spectatorDto_ = null;
+          spectatorDtoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.internal_static_chat_protocol_ReservationDto_descriptor;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getDefaultInstanceForType() {
+        return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto build() {
+        trs.network.protobuffprotocol.TrsProtobufs.ReservationDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto buildPartial() {
+        trs.network.protobuffprotocol.TrsProtobufs.ReservationDto result = new trs.network.protobuffprotocol.TrsProtobufs.ReservationDto(this);
+        result.id_ = id_;
+        if (theatreShowDtoBuilder_ == null) {
+          result.theatreShowDto_ = theatreShowDto_;
+        } else {
+          result.theatreShowDto_ = theatreShowDtoBuilder_.build();
+        }
+        if (seatDtoBuilder_ == null) {
+          result.seatDto_ = seatDto_;
+        } else {
+          result.seatDto_ = seatDtoBuilder_.build();
+        }
+        if (spectatorDtoBuilder_ == null) {
+          result.spectatorDto_ = spectatorDto_;
+        } else {
+          result.spectatorDto_ = spectatorDtoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) {
+          return mergeFrom((trs.network.protobuffprotocol.TrsProtobufs.ReservationDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto other) {
+        if (other == trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (other.hasTheatreShowDto()) {
+          mergeTheatreShowDto(other.getTheatreShowDto());
+        }
+        if (other.hasSeatDto()) {
+          mergeSeatDto(other.getSeatDto());
+        }
+        if (other.hasSpectatorDto()) {
+          mergeSpectatorDto(other.getSpectatorDto());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        trs.network.protobuffprotocol.TrsProtobufs.ReservationDto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto theatreShowDto_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder> theatreShowDtoBuilder_;
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       * @return Whether the theatreShowDto field is set.
+       */
+      public boolean hasTheatreShowDto() {
+        return theatreShowDtoBuilder_ != null || theatreShowDto_ != null;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       * @return The theatreShowDto.
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto() {
+        if (theatreShowDtoBuilder_ == null) {
+          return theatreShowDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+        } else {
+          return theatreShowDtoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public Builder setTheatreShowDto(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto value) {
+        if (theatreShowDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          theatreShowDto_ = value;
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public Builder setTheatreShowDto(
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder builderForValue) {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = builderForValue.build();
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public Builder mergeTheatreShowDto(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto value) {
+        if (theatreShowDtoBuilder_ == null) {
+          if (theatreShowDto_ != null) {
+            theatreShowDto_ =
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.newBuilder(theatreShowDto_).mergeFrom(value).buildPartial();
+          } else {
+            theatreShowDto_ = value;
+          }
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public Builder clearTheatreShowDto() {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = null;
+          onChanged();
+        } else {
+          theatreShowDto_ = null;
+          theatreShowDtoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder getTheatreShowDtoBuilder() {
+        
+        onChanged();
+        return getTheatreShowDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder() {
+        if (theatreShowDtoBuilder_ != null) {
+          return theatreShowDtoBuilder_.getMessageOrBuilder();
+        } else {
+          return theatreShowDto_ == null ?
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+        }
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder> 
+          getTheatreShowDtoFieldBuilder() {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder>(
+                  getTheatreShowDto(),
+                  getParentForChildren(),
+                  isClean());
+          theatreShowDto_ = null;
+        }
+        return theatreShowDtoBuilder_;
+      }
+
+      private trs.network.protobuffprotocol.TrsProtobufs.SeatDto seatDto_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> seatDtoBuilder_;
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       * @return Whether the seatDto field is set.
+       */
+      public boolean hasSeatDto() {
+        return seatDtoBuilder_ != null || seatDto_ != null;
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       * @return The seatDto.
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDto() {
+        if (seatDtoBuilder_ == null) {
+          return seatDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance() : seatDto_;
+        } else {
+          return seatDtoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public Builder setSeatDto(trs.network.protobuffprotocol.TrsProtobufs.SeatDto value) {
+        if (seatDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          seatDto_ = value;
+          onChanged();
+        } else {
+          seatDtoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public Builder setSeatDto(
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder builderForValue) {
+        if (seatDtoBuilder_ == null) {
+          seatDto_ = builderForValue.build();
+          onChanged();
+        } else {
+          seatDtoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public Builder mergeSeatDto(trs.network.protobuffprotocol.TrsProtobufs.SeatDto value) {
+        if (seatDtoBuilder_ == null) {
+          if (seatDto_ != null) {
+            seatDto_ =
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto.newBuilder(seatDto_).mergeFrom(value).buildPartial();
+          } else {
+            seatDto_ = value;
+          }
+          onChanged();
+        } else {
+          seatDtoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public Builder clearSeatDto() {
+        if (seatDtoBuilder_ == null) {
+          seatDto_ = null;
+          onChanged();
+        } else {
+          seatDto_ = null;
+          seatDtoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder getSeatDtoBuilder() {
+        
+        onChanged();
+        return getSeatDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtoOrBuilder() {
+        if (seatDtoBuilder_ != null) {
+          return seatDtoBuilder_.getMessageOrBuilder();
+        } else {
+          return seatDto_ == null ?
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance() : seatDto_;
+        }
+      }
+      /**
+       * <code>.chat.protocol.SeatDto seatDto = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> 
+          getSeatDtoFieldBuilder() {
+        if (seatDtoBuilder_ == null) {
+          seatDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder>(
+                  getSeatDto(),
+                  getParentForChildren(),
+                  isClean());
+          seatDto_ = null;
+        }
+        return seatDtoBuilder_;
+      }
+
+      private trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto spectatorDto_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> spectatorDtoBuilder_;
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       * @return Whether the spectatorDto field is set.
+       */
+      public boolean hasSpectatorDto() {
+        return spectatorDtoBuilder_ != null || spectatorDto_ != null;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       * @return The spectatorDto.
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          return spectatorDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+        } else {
+          return spectatorDtoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder setSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          spectatorDto_ = value;
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder setSpectatorDto(
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder builderForValue) {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = builderForValue.build();
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder mergeSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (spectatorDto_ != null) {
+            spectatorDto_ =
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.newBuilder(spectatorDto_).mergeFrom(value).buildPartial();
+          } else {
+            spectatorDto_ = value;
+          }
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder clearSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = null;
+          onChanged();
+        } else {
+          spectatorDto_ = null;
+          spectatorDtoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder getSpectatorDtoBuilder() {
+        
+        onChanged();
+        return getSpectatorDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+        if (spectatorDtoBuilder_ != null) {
+          return spectatorDtoBuilder_.getMessageOrBuilder();
+        } else {
+          return spectatorDto_ == null ?
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> 
+          getSpectatorDtoFieldBuilder() {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder>(
+                  getSpectatorDto(),
+                  getParentForChildren(),
+                  isClean());
+          spectatorDto_ = null;
+        }
+        return spectatorDtoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:chat.protocol.ReservationDto)
+    }
+
+    // @@protoc_insertion_point(class_scope:chat.protocol.ReservationDto)
+    private static final trs.network.protobuffprotocol.TrsProtobufs.ReservationDto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new trs.network.protobuffprotocol.TrsProtobufs.ReservationDto();
+    }
+
+    public static trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReservationDto>
+        PARSER = new com.google.protobuf.AbstractParser<ReservationDto>() {
+      @java.lang.Override
+      public ReservationDto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReservationDto(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReservationDto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReservationDto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TrsRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:chat.protocol.TrsRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -3598,19 +6112,82 @@ public final class TrsProtobufs {
         int index);
 
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto> 
+        getSeatDtosList();
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDtos(int index);
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    int getSeatDtosCount();
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> 
+        getSeatDtosOrBuilderList();
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtosOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> 
+        getReservationDtosList();
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDtos(int index);
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    int getReservationDtosCount();
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> 
+        getReservationDtosOrBuilderList();
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtosOrBuilder(
+        int index);
+
+    /**
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      * @return Whether the adminDto field is set.
      */
     boolean hasAdminDto();
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      * @return The adminDto.
      */
     trs.network.protobuffprotocol.TrsProtobufs.AdminDto getAdminDto();
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      */
     trs.network.protobuffprotocol.TrsProtobufs.AdminDtoOrBuilder getAdminDtoOrBuilder();
+
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     * @return Whether the theatreShowDto field is set.
+     */
+    boolean hasTheatreShowDto();
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     * @return The theatreShowDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto();
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder();
   }
   /**
    * Protobuf type {@code chat.protocol.TrsResponse}
@@ -3628,6 +6205,8 @@ public final class TrsProtobufs {
       type_ = 0;
       error_ = "";
       theatreShowDtos_ = java.util.Collections.emptyList();
+      seatDtos_ = java.util.Collections.emptyList();
+      reservationDtos_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3683,6 +6262,24 @@ public final class TrsProtobufs {
               break;
             }
             case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                seatDtos_ = new java.util.ArrayList<trs.network.protobuffprotocol.TrsProtobufs.SeatDto>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              seatDtos_.add(
+                  input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.SeatDto.parser(), extensionRegistry));
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                reservationDtos_ = new java.util.ArrayList<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              reservationDtos_.add(
+                  input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.parser(), extensionRegistry));
+              break;
+            }
+            case 50: {
               trs.network.protobuffprotocol.TrsProtobufs.AdminDto.Builder subBuilder = null;
               if (adminDto_ != null) {
                 subBuilder = adminDto_.toBuilder();
@@ -3691,6 +6288,19 @@ public final class TrsProtobufs {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(adminDto_);
                 adminDto_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder subBuilder = null;
+              if (theatreShowDto_ != null) {
+                subBuilder = theatreShowDto_.toBuilder();
+              }
+              theatreShowDto_ = input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(theatreShowDto_);
+                theatreShowDto_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3714,6 +6324,12 @@ public final class TrsProtobufs {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           theatreShowDtos_ = java.util.Collections.unmodifiableList(theatreShowDtos_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          seatDtos_ = java.util.Collections.unmodifiableList(seatDtos_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          reservationDtos_ = java.util.Collections.unmodifiableList(reservationDtos_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3753,6 +6369,10 @@ public final class TrsProtobufs {
        * <code>RELOAD_THEATRE_SHOWS = 3;</code>
        */
       RELOAD_THEATRE_SHOWS(3),
+      /**
+       * <code>RELOAD_SEATS = 4;</code>
+       */
+      RELOAD_SEATS(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -3772,6 +6392,10 @@ public final class TrsProtobufs {
        * <code>RELOAD_THEATRE_SHOWS = 3;</code>
        */
       public static final int RELOAD_THEATRE_SHOWS_VALUE = 3;
+      /**
+       * <code>RELOAD_SEATS = 4;</code>
+       */
+      public static final int RELOAD_SEATS_VALUE = 4;
 
 
       public final int getNumber() {
@@ -3802,6 +6426,7 @@ public final class TrsProtobufs {
           case 1: return OK;
           case 2: return ERROR;
           case 3: return RELOAD_THEATRE_SHOWS;
+          case 4: return RELOAD_SEATS;
           default: return null;
         }
       }
@@ -3963,10 +6588,90 @@ public final class TrsProtobufs {
       return theatreShowDtos_.get(index);
     }
 
-    public static final int ADMINDTO_FIELD_NUMBER = 4;
+    public static final int SEATDTOS_FIELD_NUMBER = 4;
+    private java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto> seatDtos_;
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto> getSeatDtosList() {
+      return seatDtos_;
+    }
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> 
+        getSeatDtosOrBuilderList() {
+      return seatDtos_;
+    }
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    @java.lang.Override
+    public int getSeatDtosCount() {
+      return seatDtos_.size();
+    }
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDtos(int index) {
+      return seatDtos_.get(index);
+    }
+    /**
+     * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtosOrBuilder(
+        int index) {
+      return seatDtos_.get(index);
+    }
+
+    public static final int RESERVATIONDTOS_FIELD_NUMBER = 5;
+    private java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> reservationDtos_;
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> getReservationDtosList() {
+      return reservationDtos_;
+    }
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> 
+        getReservationDtosOrBuilderList() {
+      return reservationDtos_;
+    }
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    @java.lang.Override
+    public int getReservationDtosCount() {
+      return reservationDtos_.size();
+    }
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDtos(int index) {
+      return reservationDtos_.get(index);
+    }
+    /**
+     * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtosOrBuilder(
+        int index) {
+      return reservationDtos_.get(index);
+    }
+
+    public static final int ADMINDTO_FIELD_NUMBER = 6;
     private trs.network.protobuffprotocol.TrsProtobufs.AdminDto adminDto_;
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      * @return Whether the adminDto field is set.
      */
     @java.lang.Override
@@ -3974,7 +6679,7 @@ public final class TrsProtobufs {
       return adminDto_ != null;
     }
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      * @return The adminDto.
      */
     @java.lang.Override
@@ -3982,11 +6687,37 @@ public final class TrsProtobufs {
       return adminDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.AdminDto.getDefaultInstance() : adminDto_;
     }
     /**
-     * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+     * <code>.chat.protocol.AdminDto adminDto = 6;</code>
      */
     @java.lang.Override
     public trs.network.protobuffprotocol.TrsProtobufs.AdminDtoOrBuilder getAdminDtoOrBuilder() {
       return getAdminDto();
+    }
+
+    public static final int THEATRESHOWDTO_FIELD_NUMBER = 7;
+    private trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto theatreShowDto_;
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     * @return Whether the theatreShowDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasTheatreShowDto() {
+      return theatreShowDto_ != null;
+    }
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     * @return The theatreShowDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto() {
+      return theatreShowDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+    }
+    /**
+     * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder() {
+      return getTheatreShowDto();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4012,8 +6743,17 @@ public final class TrsProtobufs {
       for (int i = 0; i < theatreShowDtos_.size(); i++) {
         output.writeMessage(3, theatreShowDtos_.get(i));
       }
+      for (int i = 0; i < seatDtos_.size(); i++) {
+        output.writeMessage(4, seatDtos_.get(i));
+      }
+      for (int i = 0; i < reservationDtos_.size(); i++) {
+        output.writeMessage(5, reservationDtos_.get(i));
+      }
       if (adminDto_ != null) {
-        output.writeMessage(4, getAdminDto());
+        output.writeMessage(6, getAdminDto());
+      }
+      if (theatreShowDto_ != null) {
+        output.writeMessage(7, getTheatreShowDto());
       }
       unknownFields.writeTo(output);
     }
@@ -4035,9 +6775,21 @@ public final class TrsProtobufs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, theatreShowDtos_.get(i));
       }
+      for (int i = 0; i < seatDtos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, seatDtos_.get(i));
+      }
+      for (int i = 0; i < reservationDtos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, reservationDtos_.get(i));
+      }
       if (adminDto_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getAdminDto());
+          .computeMessageSize(6, getAdminDto());
+      }
+      if (theatreShowDto_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getTheatreShowDto());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4059,10 +6811,19 @@ public final class TrsProtobufs {
           .equals(other.getError())) return false;
       if (!getTheatreShowDtosList()
           .equals(other.getTheatreShowDtosList())) return false;
+      if (!getSeatDtosList()
+          .equals(other.getSeatDtosList())) return false;
+      if (!getReservationDtosList()
+          .equals(other.getReservationDtosList())) return false;
       if (hasAdminDto() != other.hasAdminDto()) return false;
       if (hasAdminDto()) {
         if (!getAdminDto()
             .equals(other.getAdminDto())) return false;
+      }
+      if (hasTheatreShowDto() != other.hasTheatreShowDto()) return false;
+      if (hasTheatreShowDto()) {
+        if (!getTheatreShowDto()
+            .equals(other.getTheatreShowDto())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -4083,9 +6844,21 @@ public final class TrsProtobufs {
         hash = (37 * hash) + THEATRESHOWDTOS_FIELD_NUMBER;
         hash = (53 * hash) + getTheatreShowDtosList().hashCode();
       }
+      if (getSeatDtosCount() > 0) {
+        hash = (37 * hash) + SEATDTOS_FIELD_NUMBER;
+        hash = (53 * hash) + getSeatDtosList().hashCode();
+      }
+      if (getReservationDtosCount() > 0) {
+        hash = (37 * hash) + RESERVATIONDTOS_FIELD_NUMBER;
+        hash = (53 * hash) + getReservationDtosList().hashCode();
+      }
       if (hasAdminDto()) {
         hash = (37 * hash) + ADMINDTO_FIELD_NUMBER;
         hash = (53 * hash) + getAdminDto().hashCode();
+      }
+      if (hasTheatreShowDto()) {
+        hash = (37 * hash) + THEATRESHOWDTO_FIELD_NUMBER;
+        hash = (53 * hash) + getTheatreShowDto().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4216,6 +6989,8 @@ public final class TrsProtobufs {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTheatreShowDtosFieldBuilder();
+          getSeatDtosFieldBuilder();
+          getReservationDtosFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4231,11 +7006,29 @@ public final class TrsProtobufs {
         } else {
           theatreShowDtosBuilder_.clear();
         }
+        if (seatDtosBuilder_ == null) {
+          seatDtos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          seatDtosBuilder_.clear();
+        }
+        if (reservationDtosBuilder_ == null) {
+          reservationDtos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          reservationDtosBuilder_.clear();
+        }
         if (adminDtoBuilder_ == null) {
           adminDto_ = null;
         } else {
           adminDto_ = null;
           adminDtoBuilder_ = null;
+        }
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = null;
+        } else {
+          theatreShowDto_ = null;
+          theatreShowDtoBuilder_ = null;
         }
         return this;
       }
@@ -4275,10 +7068,33 @@ public final class TrsProtobufs {
         } else {
           result.theatreShowDtos_ = theatreShowDtosBuilder_.build();
         }
+        if (seatDtosBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            seatDtos_ = java.util.Collections.unmodifiableList(seatDtos_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.seatDtos_ = seatDtos_;
+        } else {
+          result.seatDtos_ = seatDtosBuilder_.build();
+        }
+        if (reservationDtosBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            reservationDtos_ = java.util.Collections.unmodifiableList(reservationDtos_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.reservationDtos_ = reservationDtos_;
+        } else {
+          result.reservationDtos_ = reservationDtosBuilder_.build();
+        }
         if (adminDtoBuilder_ == null) {
           result.adminDto_ = adminDto_;
         } else {
           result.adminDto_ = adminDtoBuilder_.build();
+        }
+        if (theatreShowDtoBuilder_ == null) {
+          result.theatreShowDto_ = theatreShowDto_;
+        } else {
+          result.theatreShowDto_ = theatreShowDtoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4361,8 +7177,63 @@ public final class TrsProtobufs {
             }
           }
         }
+        if (seatDtosBuilder_ == null) {
+          if (!other.seatDtos_.isEmpty()) {
+            if (seatDtos_.isEmpty()) {
+              seatDtos_ = other.seatDtos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSeatDtosIsMutable();
+              seatDtos_.addAll(other.seatDtos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.seatDtos_.isEmpty()) {
+            if (seatDtosBuilder_.isEmpty()) {
+              seatDtosBuilder_.dispose();
+              seatDtosBuilder_ = null;
+              seatDtos_ = other.seatDtos_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              seatDtosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSeatDtosFieldBuilder() : null;
+            } else {
+              seatDtosBuilder_.addAllMessages(other.seatDtos_);
+            }
+          }
+        }
+        if (reservationDtosBuilder_ == null) {
+          if (!other.reservationDtos_.isEmpty()) {
+            if (reservationDtos_.isEmpty()) {
+              reservationDtos_ = other.reservationDtos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureReservationDtosIsMutable();
+              reservationDtos_.addAll(other.reservationDtos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.reservationDtos_.isEmpty()) {
+            if (reservationDtosBuilder_.isEmpty()) {
+              reservationDtosBuilder_.dispose();
+              reservationDtosBuilder_ = null;
+              reservationDtos_ = other.reservationDtos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              reservationDtosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getReservationDtosFieldBuilder() : null;
+            } else {
+              reservationDtosBuilder_.addAllMessages(other.reservationDtos_);
+            }
+          }
+        }
         if (other.hasAdminDto()) {
           mergeAdminDto(other.getAdminDto());
+        }
+        if (other.hasTheatreShowDto()) {
+          mergeTheatreShowDto(other.getTheatreShowDto());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4784,18 +7655,498 @@ public final class TrsProtobufs {
         return theatreShowDtosBuilder_;
       }
 
+      private java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto> seatDtos_ =
+        java.util.Collections.emptyList();
+      private void ensureSeatDtosIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          seatDtos_ = new java.util.ArrayList<trs.network.protobuffprotocol.TrsProtobufs.SeatDto>(seatDtos_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> seatDtosBuilder_;
+
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto> getSeatDtosList() {
+        if (seatDtosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(seatDtos_);
+        } else {
+          return seatDtosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public int getSeatDtosCount() {
+        if (seatDtosBuilder_ == null) {
+          return seatDtos_.size();
+        } else {
+          return seatDtosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto getSeatDtos(int index) {
+        if (seatDtosBuilder_ == null) {
+          return seatDtos_.get(index);
+        } else {
+          return seatDtosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder setSeatDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.SeatDto value) {
+        if (seatDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSeatDtosIsMutable();
+          seatDtos_.set(index, value);
+          onChanged();
+        } else {
+          seatDtosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder setSeatDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder builderForValue) {
+        if (seatDtosBuilder_ == null) {
+          ensureSeatDtosIsMutable();
+          seatDtos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          seatDtosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder addSeatDtos(trs.network.protobuffprotocol.TrsProtobufs.SeatDto value) {
+        if (seatDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSeatDtosIsMutable();
+          seatDtos_.add(value);
+          onChanged();
+        } else {
+          seatDtosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder addSeatDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.SeatDto value) {
+        if (seatDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSeatDtosIsMutable();
+          seatDtos_.add(index, value);
+          onChanged();
+        } else {
+          seatDtosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder addSeatDtos(
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder builderForValue) {
+        if (seatDtosBuilder_ == null) {
+          ensureSeatDtosIsMutable();
+          seatDtos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          seatDtosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder addSeatDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder builderForValue) {
+        if (seatDtosBuilder_ == null) {
+          ensureSeatDtosIsMutable();
+          seatDtos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          seatDtosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder addAllSeatDtos(
+          java.lang.Iterable<? extends trs.network.protobuffprotocol.TrsProtobufs.SeatDto> values) {
+        if (seatDtosBuilder_ == null) {
+          ensureSeatDtosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, seatDtos_);
+          onChanged();
+        } else {
+          seatDtosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder clearSeatDtos() {
+        if (seatDtosBuilder_ == null) {
+          seatDtos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          seatDtosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public Builder removeSeatDtos(int index) {
+        if (seatDtosBuilder_ == null) {
+          ensureSeatDtosIsMutable();
+          seatDtos_.remove(index);
+          onChanged();
+        } else {
+          seatDtosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder getSeatDtosBuilder(
+          int index) {
+        return getSeatDtosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder getSeatDtosOrBuilder(
+          int index) {
+        if (seatDtosBuilder_ == null) {
+          return seatDtos_.get(index);  } else {
+          return seatDtosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> 
+           getSeatDtosOrBuilderList() {
+        if (seatDtosBuilder_ != null) {
+          return seatDtosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(seatDtos_);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder addSeatDtosBuilder() {
+        return getSeatDtosFieldBuilder().addBuilder(
+            trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder addSeatDtosBuilder(
+          int index) {
+        return getSeatDtosFieldBuilder().addBuilder(
+            index, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .chat.protocol.SeatDto seatDtos = 4;</code>
+       */
+      public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder> 
+           getSeatDtosBuilderList() {
+        return getSeatDtosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder> 
+          getSeatDtosFieldBuilder() {
+        if (seatDtosBuilder_ == null) {
+          seatDtosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.SeatDto, trs.network.protobuffprotocol.TrsProtobufs.SeatDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SeatDtoOrBuilder>(
+                  seatDtos_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          seatDtos_ = null;
+        }
+        return seatDtosBuilder_;
+      }
+
+      private java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> reservationDtos_ =
+        java.util.Collections.emptyList();
+      private void ensureReservationDtosIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          reservationDtos_ = new java.util.ArrayList<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto>(reservationDtos_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> reservationDtosBuilder_;
+
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> getReservationDtosList() {
+        if (reservationDtosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(reservationDtos_);
+        } else {
+          return reservationDtosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public int getReservationDtosCount() {
+        if (reservationDtosBuilder_ == null) {
+          return reservationDtos_.size();
+        } else {
+          return reservationDtosBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDtos(int index) {
+        if (reservationDtosBuilder_ == null) {
+          return reservationDtos_.get(index);
+        } else {
+          return reservationDtosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder setReservationDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto value) {
+        if (reservationDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReservationDtosIsMutable();
+          reservationDtos_.set(index, value);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder setReservationDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder builderForValue) {
+        if (reservationDtosBuilder_ == null) {
+          ensureReservationDtosIsMutable();
+          reservationDtos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          reservationDtosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder addReservationDtos(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto value) {
+        if (reservationDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReservationDtosIsMutable();
+          reservationDtos_.add(value);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder addReservationDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto value) {
+        if (reservationDtosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReservationDtosIsMutable();
+          reservationDtos_.add(index, value);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder addReservationDtos(
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder builderForValue) {
+        if (reservationDtosBuilder_ == null) {
+          ensureReservationDtosIsMutable();
+          reservationDtos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          reservationDtosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder addReservationDtos(
+          int index, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder builderForValue) {
+        if (reservationDtosBuilder_ == null) {
+          ensureReservationDtosIsMutable();
+          reservationDtos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          reservationDtosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder addAllReservationDtos(
+          java.lang.Iterable<? extends trs.network.protobuffprotocol.TrsProtobufs.ReservationDto> values) {
+        if (reservationDtosBuilder_ == null) {
+          ensureReservationDtosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, reservationDtos_);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder clearReservationDtos() {
+        if (reservationDtosBuilder_ == null) {
+          reservationDtos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public Builder removeReservationDtos(int index) {
+        if (reservationDtosBuilder_ == null) {
+          ensureReservationDtosIsMutable();
+          reservationDtos_.remove(index);
+          onChanged();
+        } else {
+          reservationDtosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder getReservationDtosBuilder(
+          int index) {
+        return getReservationDtosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtosOrBuilder(
+          int index) {
+        if (reservationDtosBuilder_ == null) {
+          return reservationDtos_.get(index);  } else {
+          return reservationDtosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public java.util.List<? extends trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> 
+           getReservationDtosOrBuilderList() {
+        if (reservationDtosBuilder_ != null) {
+          return reservationDtosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(reservationDtos_);
+        }
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder addReservationDtosBuilder() {
+        return getReservationDtosFieldBuilder().addBuilder(
+            trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder addReservationDtosBuilder(
+          int index) {
+        return getReservationDtosFieldBuilder().addBuilder(
+            index, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .chat.protocol.ReservationDto reservationDtos = 5;</code>
+       */
+      public java.util.List<trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder> 
+           getReservationDtosBuilderList() {
+        return getReservationDtosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> 
+          getReservationDtosFieldBuilder() {
+        if (reservationDtosBuilder_ == null) {
+          reservationDtosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder>(
+                  reservationDtos_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          reservationDtos_ = null;
+        }
+        return reservationDtosBuilder_;
+      }
+
       private trs.network.protobuffprotocol.TrsProtobufs.AdminDto adminDto_;
       private com.google.protobuf.SingleFieldBuilderV3<
           trs.network.protobuffprotocol.TrsProtobufs.AdminDto, trs.network.protobuffprotocol.TrsProtobufs.AdminDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.AdminDtoOrBuilder> adminDtoBuilder_;
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        * @return Whether the adminDto field is set.
        */
       public boolean hasAdminDto() {
         return adminDtoBuilder_ != null || adminDto_ != null;
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        * @return The adminDto.
        */
       public trs.network.protobuffprotocol.TrsProtobufs.AdminDto getAdminDto() {
@@ -4806,7 +8157,7 @@ public final class TrsProtobufs {
         }
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public Builder setAdminDto(trs.network.protobuffprotocol.TrsProtobufs.AdminDto value) {
         if (adminDtoBuilder_ == null) {
@@ -4822,7 +8173,7 @@ public final class TrsProtobufs {
         return this;
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public Builder setAdminDto(
           trs.network.protobuffprotocol.TrsProtobufs.AdminDto.Builder builderForValue) {
@@ -4836,7 +8187,7 @@ public final class TrsProtobufs {
         return this;
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public Builder mergeAdminDto(trs.network.protobuffprotocol.TrsProtobufs.AdminDto value) {
         if (adminDtoBuilder_ == null) {
@@ -4854,7 +8205,7 @@ public final class TrsProtobufs {
         return this;
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public Builder clearAdminDto() {
         if (adminDtoBuilder_ == null) {
@@ -4868,7 +8219,7 @@ public final class TrsProtobufs {
         return this;
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public trs.network.protobuffprotocol.TrsProtobufs.AdminDto.Builder getAdminDtoBuilder() {
         
@@ -4876,7 +8227,7 @@ public final class TrsProtobufs {
         return getAdminDtoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       public trs.network.protobuffprotocol.TrsProtobufs.AdminDtoOrBuilder getAdminDtoOrBuilder() {
         if (adminDtoBuilder_ != null) {
@@ -4887,7 +8238,7 @@ public final class TrsProtobufs {
         }
       }
       /**
-       * <code>.chat.protocol.AdminDto adminDto = 4;</code>
+       * <code>.chat.protocol.AdminDto adminDto = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trs.network.protobuffprotocol.TrsProtobufs.AdminDto, trs.network.protobuffprotocol.TrsProtobufs.AdminDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.AdminDtoOrBuilder> 
@@ -4901,6 +8252,125 @@ public final class TrsProtobufs {
           adminDto_ = null;
         }
         return adminDtoBuilder_;
+      }
+
+      private trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto theatreShowDto_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder> theatreShowDtoBuilder_;
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       * @return Whether the theatreShowDto field is set.
+       */
+      public boolean hasTheatreShowDto() {
+        return theatreShowDtoBuilder_ != null || theatreShowDto_ != null;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       * @return The theatreShowDto.
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto getTheatreShowDto() {
+        if (theatreShowDtoBuilder_ == null) {
+          return theatreShowDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+        } else {
+          return theatreShowDtoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public Builder setTheatreShowDto(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto value) {
+        if (theatreShowDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          theatreShowDto_ = value;
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public Builder setTheatreShowDto(
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder builderForValue) {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = builderForValue.build();
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public Builder mergeTheatreShowDto(trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto value) {
+        if (theatreShowDtoBuilder_ == null) {
+          if (theatreShowDto_ != null) {
+            theatreShowDto_ =
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.newBuilder(theatreShowDto_).mergeFrom(value).buildPartial();
+          } else {
+            theatreShowDto_ = value;
+          }
+          onChanged();
+        } else {
+          theatreShowDtoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public Builder clearTheatreShowDto() {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDto_ = null;
+          onChanged();
+        } else {
+          theatreShowDto_ = null;
+          theatreShowDtoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder getTheatreShowDtoBuilder() {
+        
+        onChanged();
+        return getTheatreShowDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder() {
+        if (theatreShowDtoBuilder_ != null) {
+          return theatreShowDtoBuilder_.getMessageOrBuilder();
+        } else {
+          return theatreShowDto_ == null ?
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance() : theatreShowDto_;
+        }
+      }
+      /**
+       * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder> 
+          getTheatreShowDtoFieldBuilder() {
+        if (theatreShowDtoBuilder_ == null) {
+          theatreShowDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder>(
+                  getTheatreShowDto(),
+                  getParentForChildren(),
+                  isClean());
+          theatreShowDto_ = null;
+        }
+        return theatreShowDtoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4971,6 +8441,21 @@ public final class TrsProtobufs {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_chat_protocol_TheatreShowDto_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_chat_protocol_SeatDto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_chat_protocol_SeatDto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_chat_protocol_SpectatorDto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_chat_protocol_SpectatorDto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_chat_protocol_ReservationDto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_chat_protocol_ReservationDto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_chat_protocol_TrsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4995,31 +8480,51 @@ public final class TrsProtobufs {
       "\t\022\020\n\010password\030\003 \001(\t\"~\n\016TheatreShowDto\022\n\n" +
       "\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\'\n\007dateDto\030\003 \001(\013" +
       "2\026.chat.protocol.DateDto\022)\n\010adminDto\030\004 \001" +
-      "(\0132\027.chat.protocol.AdminDto\"\213\001\n\nTrsReque" +
-      "st\022+\n\010adminDto\030\001 \001(\0132\027.chat.protocol.Adm" +
-      "inDtoH\000\0227\n\016theatreShowDto\030\002 \001(\0132\035.chat.p" +
-      "rotocol.TheatreShowDtoH\000\022\014\n\002id\030\003 \001(\003H\000B\t" +
-      "\n\007payload\"\360\001\n\013TrsResponse\022-\n\004type\030\001 \001(\0162" +
-      "\037.chat.protocol.TrsResponse.Type\022\r\n\005erro" +
-      "r\030\002 \001(\t\0226\n\017theatreShowDtos\030\003 \003(\0132\035.chat." +
-      "protocol.TheatreShowDto\022)\n\010adminDto\030\004 \001(" +
-      "\0132\027.chat.protocol.AdminDto\"@\n\004Type\022\013\n\007UN" +
-      "KNOWN\020\000\022\006\n\002OK\020\001\022\t\n\005ERROR\020\002\022\030\n\024RELOAD_THE" +
-      "ATRE_SHOWS\020\0032\221\004\n\nTrsService\022S\n\026addTheatr" +
-      "eShowObserver\022\031.chat.protocol.TrsRequest" +
-      "\032\032.chat.protocol.TrsResponse(\0010\001\022>\n\005logi" +
-      "n\022\031.chat.protocol.TrsRequest\032\032.chat.prot" +
-      "ocol.TrsResponse\022?\n\006logout\022\031.chat.protoc" +
-      "ol.TrsRequest\032\032.chat.protocol.TrsRespons" +
-      "e\022K\n\022findAllTheatreShow\022\031.chat.protocol." +
-      "TrsRequest\032\032.chat.protocol.TrsResponse\022H" +
-      "\n\017saveTheatreShow\022\031.chat.protocol.TrsReq" +
-      "uest\032\032.chat.protocol.TrsResponse\022J\n\021upda" +
-      "teTheatreShow\022\031.chat.protocol.TrsRequest" +
-      "\032\032.chat.protocol.TrsResponse\022J\n\021deleteTh" +
-      "eatreShow\022\031.chat.protocol.TrsRequest\032\032.c" +
-      "hat.protocol.TrsResponseB-\n\035trs.network." +
-      "protobuffprotocolB\014TrsProtobufsb\006proto3"
+      "(\0132\027.chat.protocol.AdminDto\"P\n\007SeatDto\022\n" +
+      "\n\002id\030\001 \001(\003\022\r\n\005lodge\030\002 \001(\005\022\013\n\003row\030\003 \001(\005\022\016" +
+      "\n\006number\030\004 \001(\005\022\r\n\005price\030\005 \001(\002\"(\n\014Spectat" +
+      "orDto\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\"\257\001\n\016Rese" +
+      "rvationDto\022\n\n\002id\030\001 \001(\003\0225\n\016theatreShowDto" +
+      "\030\002 \001(\0132\035.chat.protocol.TheatreShowDto\022\'\n" +
+      "\007seatDto\030\003 \001(\0132\026.chat.protocol.SeatDto\0221" +
+      "\n\014spectatorDto\030\004 \001(\0132\033.chat.protocol.Spe" +
+      "ctatorDto\"\213\001\n\nTrsRequest\022+\n\010adminDto\030\001 \001" +
+      "(\0132\027.chat.protocol.AdminDtoH\000\0227\n\016theatre" +
+      "ShowDto\030\002 \001(\0132\035.chat.protocol.TheatreSho" +
+      "wDtoH\000\022\014\n\002id\030\003 \001(\003H\000B\t\n\007payload\"\233\003\n\013TrsR" +
+      "esponse\022-\n\004type\030\001 \001(\0162\037.chat.protocol.Tr" +
+      "sResponse.Type\022\r\n\005error\030\002 \001(\t\0226\n\017theatre" +
+      "ShowDtos\030\003 \003(\0132\035.chat.protocol.TheatreSh" +
+      "owDto\022(\n\010seatDtos\030\004 \003(\0132\026.chat.protocol." +
+      "SeatDto\0226\n\017reservationDtos\030\005 \003(\0132\035.chat." +
+      "protocol.ReservationDto\022)\n\010adminDto\030\006 \001(" +
+      "\0132\027.chat.protocol.AdminDto\0225\n\016theatreSho" +
+      "wDto\030\007 \001(\0132\035.chat.protocol.TheatreShowDt" +
+      "o\"R\n\004Type\022\013\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\t\n\005ERROR\020" +
+      "\002\022\030\n\024RELOAD_THEATRE_SHOWS\020\003\022\020\n\014RELOAD_SE" +
+      "ATS\020\0042\321\006\n\nTrsService\022S\n\026addTheatreShowOb" +
+      "server\022\031.chat.protocol.TrsRequest\032\032.chat" +
+      ".protocol.TrsResponse(\0010\001\022L\n\017addSeatObse" +
+      "rver\022\031.chat.protocol.TrsRequest\032\032.chat.p" +
+      "rotocol.TrsResponse(\0010\001\022>\n\005login\022\031.chat." +
+      "protocol.TrsRequest\032\032.chat.protocol.TrsR" +
+      "esponse\022?\n\006logout\022\031.chat.protocol.TrsReq" +
+      "uest\032\032.chat.protocol.TrsResponse\022K\n\022find" +
+      "AllTheatreShow\022\031.chat.protocol.TrsReques" +
+      "t\032\032.chat.protocol.TrsResponse\022E\n\014findAll" +
+      "Seats\022\031.chat.protocol.TrsRequest\032\032.chat." +
+      "protocol.TrsResponse\022Y\n findAllReservati" +
+      "onsByTheatreShow\022\031.chat.protocol.TrsRequ" +
+      "est\032\032.chat.protocol.TrsResponse\022N\n\025findT" +
+      "odaysTheatreShow\022\031.chat.protocol.TrsRequ" +
+      "est\032\032.chat.protocol.TrsResponse\022H\n\017saveT" +
+      "heatreShow\022\031.chat.protocol.TrsRequest\032\032." +
+      "chat.protocol.TrsResponse\022J\n\021updateTheat" +
+      "reShow\022\031.chat.protocol.TrsRequest\032\032.chat" +
+      ".protocol.TrsResponse\022J\n\021deleteTheatreSh" +
+      "ow\022\031.chat.protocol.TrsRequest\032\032.chat.pro" +
+      "tocol.TrsResponseB-\n\035trs.network.protobu" +
+      "ffprotocolB\014TrsProtobufsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5043,18 +8548,36 @@ public final class TrsProtobufs {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_chat_protocol_TheatreShowDto_descriptor,
         new java.lang.String[] { "Id", "Name", "DateDto", "AdminDto", });
-    internal_static_chat_protocol_TrsRequest_descriptor =
+    internal_static_chat_protocol_SeatDto_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_chat_protocol_SeatDto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_chat_protocol_SeatDto_descriptor,
+        new java.lang.String[] { "Id", "Lodge", "Row", "Number", "Price", });
+    internal_static_chat_protocol_SpectatorDto_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_chat_protocol_SpectatorDto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_chat_protocol_SpectatorDto_descriptor,
+        new java.lang.String[] { "Id", "Name", });
+    internal_static_chat_protocol_ReservationDto_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_chat_protocol_ReservationDto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_chat_protocol_ReservationDto_descriptor,
+        new java.lang.String[] { "Id", "TheatreShowDto", "SeatDto", "SpectatorDto", });
+    internal_static_chat_protocol_TrsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_chat_protocol_TrsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_chat_protocol_TrsRequest_descriptor,
         new java.lang.String[] { "AdminDto", "TheatreShowDto", "Id", "Payload", });
     internal_static_chat_protocol_TrsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_chat_protocol_TrsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_chat_protocol_TrsResponse_descriptor,
-        new java.lang.String[] { "Type", "Error", "TheatreShowDtos", "AdminDto", });
+        new java.lang.String[] { "Type", "Error", "TheatreShowDtos", "SeatDtos", "ReservationDtos", "AdminDto", "TheatreShowDto", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

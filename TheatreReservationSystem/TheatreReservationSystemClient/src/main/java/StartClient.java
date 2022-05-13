@@ -55,6 +55,10 @@ public class StartClient extends Application {
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setTitle("Theatre Reservation System");
         primaryStage.setScene(scene);
+
+        primaryStage.setOnCloseRequest(event -> {
+            ctrl.onClose();
+        });
         primaryStage.show();
     }
 }

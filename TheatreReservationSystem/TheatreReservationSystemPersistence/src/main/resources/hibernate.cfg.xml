@@ -8,7 +8,7 @@
 
         <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
-        <property name="connection.url">jdbc:sqlite:C:\UBB\SEM IV\Ingineria Sistemelor Soft\Lab\iss-lab\TheatreReservationSystem\trs.sqlite</property>
+        <property name="connection.url">jdbc:sqlite:trs.sqlite</property>
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
@@ -19,5 +19,8 @@
 
         <mapping resource="Admin.hbm.xml"/>
         <mapping resource="TheatreShow.hbm.xml"/>
+        <mapping resource="Seat.hbm.xml"/>
+        <mapping resource="Spectator.hbm.xml"/>
+        <mapping resource="Reservation.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

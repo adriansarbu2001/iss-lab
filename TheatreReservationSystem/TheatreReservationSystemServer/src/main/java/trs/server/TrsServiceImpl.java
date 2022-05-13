@@ -2,54 +2,103 @@ package trs.server;
 
 import io.grpc.stub.StreamObserver;
 import trs.model.Admin;
+import trs.model.Reservation;
+import trs.model.Seat;
 import trs.model.TheatreShow;
 import trs.model.validator.ValidatorException;
 import trs.network.protobuffprotocol.TrsProtobufs;
 import trs.network.protobuffprotocol.TrsServiceGrpc;
-import trs.persistence.IAdminRepository;
-import trs.persistence.ITheatreShowRepository;
+import trs.persistence.*;
 import trs.persistence.repository.RepositoryException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 public class TrsServiceImpl extends TrsServiceGrpc.TrsServiceImplBase {
+
     private final IAdminRepository adminRepository;
     private final ITheatreShowRepository theatreShowRepository;
-    private final Set<StreamObserver<TrsProtobufs.TrsResponse>> observers;
+    private final ISeatRepository seatRepository;
+    private final IReservationRepository reservationRepository;
+    private final ISpectatorRepository spectatorRepository;
+    private final Set<StreamObserver<TrsProtobufs.TrsResponse>> theatreShowObservers;
+    private final Set<StreamObserver<TrsProtobufs.TrsResponse>> seatObservers;
     private final Set<Long> loggedUsers;
 
-    public TrsServiceImpl(IAdminRepository adminRepository, ITheatreShowRepository theatreShowRepository) {
+    public TrsServiceImpl(
+            IAdminRepository adminRepository,
+            ITheatreShowRepository theatreShowRepository,
+            ISeatRepository seatRepository,
+            IReservationRepository reservationRepository,
+            ISpectatorRepository spectatorRepository
+    ) {
         this.adminRepository = adminRepository;
         this.theatreShowRepository = theatreShowRepository;
-        observers = new LinkedHashSet<>();
+        this.seatRepository = seatRepository;
+        this.reservationRepository = reservationRepository;
+        this.spectatorRepository = spectatorRepository;
+        theatreShowObservers = new LinkedHashSet<>();
+        seatObservers = new LinkedHashSet<>();
         loggedUsers = new LinkedHashSet<>();
     }
 
     @Override
     public StreamObserver<TrsProtobufs.TrsRequest> addTheatreShowObserver(StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
-        observers.add(responseObserver);
+        theatreShowObservers.add(responseObserver);
+        System.out.println("Theatre show observer added\n");
 
         return new StreamObserver<>() {
             @Override
             public void onNext(TrsProtobufs.TrsRequest request) {
-                for (StreamObserver<TrsProtobufs.TrsResponse> observer : observers) {
+                for (StreamObserver<TrsProtobufs.TrsResponse> observer : theatreShowObservers) {
                     observer.onNext(TrsProtobufs.TrsResponse.newBuilder().setType(TrsProtobufs.TrsResponse.Type.RELOAD_THEATRE_SHOWS).build());
                 }
             }
 
             @Override
             public void onError(Throwable t) {
-                observers.remove(responseObserver);
+                theatreShowObservers.remove(responseObserver);
                 responseObserver.onError(t);
+                System.out.println("Theatre show observer removed\n");
             }
 
             @Override
             public void onCompleted() {
-                observers.remove(responseObserver);
+                theatreShowObservers.remove(responseObserver);
                 responseObserver.onCompleted();
+                System.out.println("Theatre show observer removed\n");
+            }
+        };
+    }
+
+    @Override
+    public StreamObserver<TrsProtobufs.TrsRequest> addSeatObserver(StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        seatObservers.add(responseObserver);
+        System.out.println("Seat observer added\n");
+
+        return new StreamObserver<>() {
+            @Override
+            public void onNext(TrsProtobufs.TrsRequest request) {
+                for (StreamObserver<TrsProtobufs.TrsResponse> observer : seatObservers) {
+                    observer.onNext(TrsProtobufs.TrsResponse.newBuilder().setType(TrsProtobufs.TrsResponse.Type.RELOAD_SEATS).build());
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                seatObservers.remove(responseObserver);
+                responseObserver.onError(t);
+                System.out.println("Seat observer removed\n");
+            }
+
+            @Override
+            public void onCompleted() {
+                seatObservers.remove(responseObserver);
+                responseObserver.onCompleted();
+                System.out.println("Seat observer removed\n");
             }
         };
     }
@@ -134,6 +183,84 @@ public class TrsServiceImpl extends TrsServiceGrpc.TrsServiceImplBase {
                     .setType(TrsProtobufs.TrsResponse.Type.OK)
                     .addAllTheatreShowDtos(all)
                     .build();
+        } catch (RepositoryException ex) {
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                    .setError(ex.getMessage())
+                    .build();
+        }
+        responseObserver.onNext(response);
+        System.out.println("Am trimis raspuns " + response.getType() + "\n");
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void findAllSeats(TrsProtobufs.TrsRequest request, StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        System.out.println("Am primit request FIND_ALL_SEATS");
+        List<TrsProtobufs.SeatDto> all = new ArrayList<>();
+        TrsProtobufs.TrsResponse response;
+        try {
+            for (Seat seat : seatRepository.findAll()) {
+                all.add(DtoUtils.fromSeat(seat));
+            }
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.OK)
+                    .addAllSeatDtos(all)
+                    .build();
+        } catch (RepositoryException ex) {
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                    .setError(ex.getMessage())
+                    .build();
+        }
+        responseObserver.onNext(response);
+        System.out.println("Am trimis raspuns " + response.getType() + "\n");
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void findAllReservationsByTheatreShow(TrsProtobufs.TrsRequest request, StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        System.out.println("Am primit request FIND_ALL_RESERVATIONS_BY_THEATRE_SHOW");
+        List<TrsProtobufs.ReservationDto> all = new ArrayList<>();
+        TrsProtobufs.TrsResponse response;
+        try {
+            for (Reservation reservation : reservationRepository.findAllBy(DtoUtils.fromTheatreShowDto(request.getTheatreShowDto()))) {
+                all.add(DtoUtils.fromReservation(reservation));
+            }
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.OK)
+                    .addAllReservationDtos(all)
+                    .build();
+        } catch (RepositoryException ex) {
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                    .setError(ex.getMessage())
+                    .build();
+        }
+        responseObserver.onNext(response);
+        System.out.println("Am trimis raspuns " + response.getType() + "\n");
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void findTodaysTheatreShow(TrsProtobufs.TrsRequest request, StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        System.out.println("Am primit request FIND_TODAYS_THEATRE_SHOW");
+        TrsProtobufs.TrsResponse response;
+        try {
+            TheatreShow theatreShow = theatreShowRepository.findBy(LocalDate.now());
+            if (theatreShow != null) {
+                response = TrsProtobufs.TrsResponse.newBuilder()
+                        .setType(TrsProtobufs.TrsResponse.Type.OK)
+                        .setTheatreShowDto(DtoUtils.fromTheatreShow(theatreShow))
+                        .build();
+
+            } else {
+                response = TrsProtobufs.TrsResponse.newBuilder()
+                        .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                        .setError("Nu s-a gasit niciun spectacol de teatru azi!")
+                        .build();
+
+            }
         } catch (RepositoryException ex) {
             response = TrsProtobufs.TrsResponse.newBuilder()
                     .setType(TrsProtobufs.TrsResponse.Type.ERROR)

@@ -47,6 +47,37 @@ public final class TrsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getAddSeatObserverMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "addSeatObserver",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getAddSeatObserverMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getAddSeatObserverMethod;
+    if ((getAddSeatObserverMethod = TrsServiceGrpc.getAddSeatObserverMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getAddSeatObserverMethod = TrsServiceGrpc.getAddSeatObserverMethod) == null) {
+          TrsServiceGrpc.getAddSeatObserverMethod = getAddSeatObserverMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "addSeatObserver"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("addSeatObserver"))
+              .build();
+        }
+      }
+    }
+    return getAddSeatObserverMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
       trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getLoginMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -137,6 +168,99 @@ public final class TrsServiceGrpc {
       }
     }
     return getFindAllTheatreShowMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllSeatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "findAllSeats",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllSeatsMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllSeatsMethod;
+    if ((getFindAllSeatsMethod = TrsServiceGrpc.getFindAllSeatsMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getFindAllSeatsMethod = TrsServiceGrpc.getFindAllSeatsMethod) == null) {
+          TrsServiceGrpc.getFindAllSeatsMethod = getFindAllSeatsMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAllSeats"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("findAllSeats"))
+              .build();
+        }
+      }
+    }
+    return getFindAllSeatsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllReservationsByTheatreShowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "findAllReservationsByTheatreShow",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllReservationsByTheatreShowMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindAllReservationsByTheatreShowMethod;
+    if ((getFindAllReservationsByTheatreShowMethod = TrsServiceGrpc.getFindAllReservationsByTheatreShowMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getFindAllReservationsByTheatreShowMethod = TrsServiceGrpc.getFindAllReservationsByTheatreShowMethod) == null) {
+          TrsServiceGrpc.getFindAllReservationsByTheatreShowMethod = getFindAllReservationsByTheatreShowMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAllReservationsByTheatreShow"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("findAllReservationsByTheatreShow"))
+              .build();
+        }
+      }
+    }
+    return getFindAllReservationsByTheatreShowMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindTodaysTheatreShowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "findTodaysTheatreShow",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindTodaysTheatreShowMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getFindTodaysTheatreShowMethod;
+    if ((getFindTodaysTheatreShowMethod = TrsServiceGrpc.getFindTodaysTheatreShowMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getFindTodaysTheatreShowMethod = TrsServiceGrpc.getFindTodaysTheatreShowMethod) == null) {
+          TrsServiceGrpc.getFindTodaysTheatreShowMethod = getFindTodaysTheatreShowMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findTodaysTheatreShow"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("findTodaysTheatreShow"))
+              .build();
+        }
+      }
+    }
+    return getFindTodaysTheatreShowMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
@@ -289,6 +413,13 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest> addSeatObserver(
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getAddSeatObserverMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void login(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
@@ -306,6 +437,27 @@ public final class TrsServiceGrpc {
     public void findAllTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllTheatreShowMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void findAllSeats(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllSeatsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void findAllReservationsByTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllReservationsByTheatreShowMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void findTodaysTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindTodaysTheatreShowMethod(), responseObserver);
     }
 
     /**
@@ -339,6 +491,13 @@ public final class TrsServiceGrpc {
                 trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
                   this, METHODID_ADD_THEATRE_SHOW_OBSERVER)))
           .addMethod(
+            getAddSeatObserverMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_ADD_SEAT_OBSERVER)))
+          .addMethod(
             getLoginMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -359,6 +518,27 @@ public final class TrsServiceGrpc {
                 trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
                 trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
                   this, METHODID_FIND_ALL_THEATRE_SHOW)))
+          .addMethod(
+            getFindAllSeatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_FIND_ALL_SEATS)))
+          .addMethod(
+            getFindAllReservationsByTheatreShowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_FIND_ALL_RESERVATIONS_BY_THEATRE_SHOW)))
+          .addMethod(
+            getFindTodaysTheatreShowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_FIND_TODAYS_THEATRE_SHOW)))
           .addMethod(
             getSaveTheatreShowMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -408,6 +588,14 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest> addSeatObserver(
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getAddSeatObserverMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
     public void login(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -428,6 +616,30 @@ public final class TrsServiceGrpc {
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindAllTheatreShowMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findAllSeats(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindAllSeatsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findAllReservationsByTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindAllReservationsByTheatreShowMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void findTodaysTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindTodaysTheatreShowMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -492,6 +704,27 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse findAllSeats(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAllSeatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse findAllReservationsByTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindAllReservationsByTheatreShowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse findTodaysTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindTodaysTheatreShowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse saveTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveTheatreShowMethod(), getCallOptions(), request);
@@ -552,6 +785,30 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> findAllSeats(
+        trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindAllSeatsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> findAllReservationsByTheatreShow(
+        trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindAllReservationsByTheatreShowMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> findTodaysTheatreShow(
+        trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindTodaysTheatreShowMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> saveTheatreShow(
         trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -578,10 +835,14 @@ public final class TrsServiceGrpc {
   private static final int METHODID_LOGIN = 0;
   private static final int METHODID_LOGOUT = 1;
   private static final int METHODID_FIND_ALL_THEATRE_SHOW = 2;
-  private static final int METHODID_SAVE_THEATRE_SHOW = 3;
-  private static final int METHODID_UPDATE_THEATRE_SHOW = 4;
-  private static final int METHODID_DELETE_THEATRE_SHOW = 5;
-  private static final int METHODID_ADD_THEATRE_SHOW_OBSERVER = 6;
+  private static final int METHODID_FIND_ALL_SEATS = 3;
+  private static final int METHODID_FIND_ALL_RESERVATIONS_BY_THEATRE_SHOW = 4;
+  private static final int METHODID_FIND_TODAYS_THEATRE_SHOW = 5;
+  private static final int METHODID_SAVE_THEATRE_SHOW = 6;
+  private static final int METHODID_UPDATE_THEATRE_SHOW = 7;
+  private static final int METHODID_DELETE_THEATRE_SHOW = 8;
+  private static final int METHODID_ADD_THEATRE_SHOW_OBSERVER = 9;
+  private static final int METHODID_ADD_SEAT_OBSERVER = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -612,6 +873,18 @@ public final class TrsServiceGrpc {
           serviceImpl.findAllTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
           break;
+        case METHODID_FIND_ALL_SEATS:
+          serviceImpl.findAllSeats((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_ALL_RESERVATIONS_BY_THEATRE_SHOW:
+          serviceImpl.findAllReservationsByTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+          break;
+        case METHODID_FIND_TODAYS_THEATRE_SHOW:
+          serviceImpl.findTodaysTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+          break;
         case METHODID_SAVE_THEATRE_SHOW:
           serviceImpl.saveTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
@@ -636,6 +909,9 @@ public final class TrsServiceGrpc {
       switch (methodId) {
         case METHODID_ADD_THEATRE_SHOW_OBSERVER:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.addTheatreShowObserver(
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+        case METHODID_ADD_SEAT_OBSERVER:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.addSeatObserver(
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
         default:
           throw new AssertionError();
@@ -689,9 +965,13 @@ public final class TrsServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new TrsServiceFileDescriptorSupplier())
               .addMethod(getAddTheatreShowObserverMethod())
+              .addMethod(getAddSeatObserverMethod())
               .addMethod(getLoginMethod())
               .addMethod(getLogoutMethod())
               .addMethod(getFindAllTheatreShowMethod())
+              .addMethod(getFindAllSeatsMethod())
+              .addMethod(getFindAllReservationsByTheatreShowMethod())
+              .addMethod(getFindTodaysTheatreShowMethod())
               .addMethod(getSaveTheatreShowMethod())
               .addMethod(getUpdateTheatreShowMethod())
               .addMethod(getDeleteTheatreShowMethod())

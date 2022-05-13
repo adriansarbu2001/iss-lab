@@ -1,6 +1,8 @@
 package trs.model;
 
-public interface IEntity<ID> {
+import java.io.Serializable;
+
+public interface IEntity<ID> extends Serializable {
     ID getId();
     void setId(ID id);
 }

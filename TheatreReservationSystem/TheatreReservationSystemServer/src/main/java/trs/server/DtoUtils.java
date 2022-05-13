@@ -1,7 +1,6 @@
 package trs.server;
 
-import trs.model.Admin;
-import trs.model.TheatreShow;
+import trs.model.*;
 import trs.network.protobuffprotocol.TrsProtobufs;
 
 import java.time.LocalDate;
@@ -46,5 +45,54 @@ public class DtoUtils {
                 theatreShowDto.getName(),
                 fromDateDto(theatreShowDto.getDateDto()),
                 fromAdminDto(theatreShowDto.getAdminDto()));
+    }
+
+    public static TrsProtobufs.SeatDto fromSeat(Seat seat) {
+        return TrsProtobufs.SeatDto.newBuilder()
+                .setId(seat.getId())
+                .setLodge(seat.getLodge())
+                .setRow(seat.getRow())
+                .setNumber(seat.getNumber())
+                .setPrice(seat.getPrice())
+                .build();
+    }
+
+    public static Seat fromSeatDto(TrsProtobufs.SeatDto seatDto) {
+        return new Seat(
+                seatDto.getId(),
+                seatDto.getLodge(),
+                seatDto.getRow(),
+                seatDto.getNumber(),
+                seatDto.getPrice());
+    }
+
+    public static TrsProtobufs.SpectatorDto fromSpectator(Spectator spectator) {
+        return TrsProtobufs.SpectatorDto.newBuilder()
+                .setId(spectator.getId())
+                .setName(spectator.getName())
+                .build();
+    }
+
+    public static Spectator fromSpectatorDto(TrsProtobufs.SpectatorDto spectatorDto) {
+        return new Spectator(
+                spectatorDto.getId(),
+                spectatorDto.getName());
+    }
+
+    public static TrsProtobufs.ReservationDto fromReservation(Reservation reservation) {
+        return TrsProtobufs.ReservationDto.newBuilder()
+                .setId(reservation.getId())
+                .setTheatreShowDto(fromTheatreShow(reservation.getTheatreShow()))
+                .setSeatDto(fromSeat(reservation.getSeat()))
+                .setSpectatorDto(fromSpectator(reservation.getSpectator()))
+                .build();
+    }
+
+    public static Reservation fromReservationDto(TrsProtobufs.ReservationDto reservationDto) {
+        return new Reservation(
+                reservationDto.getId(),
+                fromTheatreShowDto(reservationDto.getTheatreShowDto()),
+                fromSeatDto(reservationDto.getSeatDto()),
+                fromSpectatorDto(reservationDto.getSpectatorDto()));
     }
 }

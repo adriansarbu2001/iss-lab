@@ -13,8 +13,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trs.client.controller.MainController">
-   <Label text="NUME_SPECTACOL_CURENT">
+<VBox stylesheets="@style.css" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trs.client.controller.MainController">
+   <Label fx:id="labelCurrentTheatreShow" text="NUME_SPECTACOL_CURENT">
       <font>
          <Font size="28.0" />
       </font>
@@ -22,12 +22,12 @@
          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </VBox.margin>
    </Label>
-   <TableView prefHeight="380.0" prefWidth="347.0">
+   <TableView fx:id="tableViewSeats">
       <columns>
-         <TableColumn prefWidth="75.0" text="loja" />
-         <TableColumn prefWidth="75.0" text="rand" />
-         <TableColumn prefWidth="75.0" text="numar" />
-         <TableColumn prefWidth="75.0" text="pret" />
+         <TableColumn fx:id="tableColumnLoja" editable="false" prefWidth="75.0" text="loja" />
+         <TableColumn fx:id="tableColumnRand" editable="false" prefWidth="75.0" text="rand" />
+         <TableColumn fx:id="tableColumnNumar" editable="false" prefWidth="75.0" text="numar" />
+         <TableColumn fx:id="tableColumnPret" editable="false" prefWidth="75.0" text="pret" />
       </columns>
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -63,7 +63,7 @@
          <Insets left="20.0" right="20.0" />
       </VBox.margin>
    </GridPane>
-   <Button mnemonicParsing="false" text="REZERVA LOCURI">
+   <Button fx:id="buttonRezervaLocuri" mnemonicParsing="false" onAction="#onButtonRezervaLocuriClick" text="REZERVA LOCURI">
       <VBox.margin>
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </VBox.margin>

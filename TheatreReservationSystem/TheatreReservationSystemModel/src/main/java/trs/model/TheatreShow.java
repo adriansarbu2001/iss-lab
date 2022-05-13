@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class TheatreShow implements IEntity<Long> {
+
     private long theatreShowId;
     private String name;
     private LocalDate date;

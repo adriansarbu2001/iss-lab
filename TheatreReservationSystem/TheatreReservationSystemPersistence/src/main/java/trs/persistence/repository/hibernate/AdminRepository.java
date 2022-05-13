@@ -101,8 +101,8 @@ public class AdminRepository implements IAdminRepository {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                result = session.createQuery("from Admin where id = ?", Admin.class)
-                        .setParameter(0, id)
+                result = session.createQuery("from Admin where id = ?1", Admin.class)
+                        .setParameter(1, id)
                         .uniqueResult();
                 tx.commit();
             } catch (RuntimeException ex) {
@@ -171,9 +171,9 @@ public class AdminRepository implements IAdminRepository {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                result = session.createQuery("from Admin where username = ? and password = ?", Admin.class)
-                        .setParameter(0, username)
-                        .setParameter(1, password)
+                result = session.createQuery("from Admin where username = ?1 and password = ?2", Admin.class)
+                        .setParameter(1, username)
+                        .setParameter(2, password)
                         .uniqueResult();
                 tx.commit();
             } catch (RuntimeException ex) {

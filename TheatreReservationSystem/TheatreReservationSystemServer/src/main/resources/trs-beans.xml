@@ -5,6 +5,9 @@
 
     <bean id="adminValidator" class="trs.model.validator.AdminValidator"/>
     <bean id="theatreShowValidator" class="trs.model.validator.TheatreShowValidator"/>
+    <bean id="seatValidator" class="trs.model.validator.SeatValidator"/>
+    <bean id="reservationValidator" class="trs.model.validator.ReservationValidator"/>
+    <bean id="spectatorValidator" class="trs.model.validator.SpectatorValidator"/>
 
     <bean id="adminRepository" class="trs.persistence.repository.hibernate.AdminRepository">
         <constructor-arg ref="adminValidator"/>
@@ -14,9 +17,24 @@
         <constructor-arg ref="theatreShowValidator"/>
     </bean>
 
+    <bean id="seatRepository" class="trs.persistence.repository.hibernate.SeatRepository">
+        <constructor-arg ref="seatValidator"/>
+    </bean>
+
+    <bean id="reservationRepository" class="trs.persistence.repository.hibernate.ReservationRepository">
+        <constructor-arg ref="reservationValidator"/>
+    </bean>
+
+    <bean id="spectatorRepository" class="trs.persistence.repository.hibernate.SpectatorRepository">
+        <constructor-arg ref="spectatorValidator"/>
+    </bean>
+
     <bean id="service" class="trs.server.TrsServiceImpl">
         <constructor-arg ref="adminRepository"/>
         <constructor-arg ref="theatreShowRepository"/>
+        <constructor-arg ref="seatRepository"/>
+        <constructor-arg ref="reservationRepository"/>
+        <constructor-arg ref="spectatorRepository"/>
     </bean>
 
 </beans>
