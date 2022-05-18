@@ -1,5 +1,9 @@
 # theatre-reservation-system
 
+## About:
+- A system for a theatre institution in which spectators can make a
+reservation for the theatre show from that day.
+
 ## Stacks:
 - Java
 - SQLite
