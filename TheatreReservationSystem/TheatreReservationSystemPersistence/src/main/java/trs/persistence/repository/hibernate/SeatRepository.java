@@ -24,7 +24,8 @@ public class SeatRepository implements ISeatRepository {
     }
 
     @Override
-    public void save(Seat seat) {
+    public Long save(Seat seat) {
+        return null;
     }
 
     @Override

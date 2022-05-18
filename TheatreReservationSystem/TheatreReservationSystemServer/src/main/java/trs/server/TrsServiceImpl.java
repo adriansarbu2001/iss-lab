@@ -1,10 +1,7 @@
 package trs.server;
 
 import io.grpc.stub.StreamObserver;
-import trs.model.Admin;
-import trs.model.Reservation;
-import trs.model.Seat;
-import trs.model.TheatreShow;
+import trs.model.*;
 import trs.model.validator.ValidatorException;
 import trs.network.protobuffprotocol.TrsProtobufs;
 import trs.network.protobuffprotocol.TrsServiceGrpc;
@@ -12,10 +9,7 @@ import trs.persistence.*;
 import trs.persistence.repository.RepositoryException;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class TrsServiceImpl extends TrsServiceGrpc.TrsServiceImplBase {
 
@@ -270,6 +264,74 @@ public class TrsServiceImpl extends TrsServiceGrpc.TrsServiceImplBase {
         responseObserver.onNext(response);
         System.out.println("Am trimis raspuns " + response.getType() + "\n");
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void saveSpectator(TrsProtobufs.TrsRequest request, StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        System.out.println("Am primit request SAVE_SPECTATOR");
+
+        Spectator spectator = DtoUtils.fromSpectatorDto(request.getSpectatorDto());
+        TrsProtobufs.TrsResponse response;
+        try {
+            Long id = spectatorRepository.save(spectator);
+            spectator.setId(id);
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.OK)
+                    .setSpectatorDto(DtoUtils.fromSpectator(spectator))
+                    .build();
+        } catch (ValidatorException | RepositoryException ex) {
+            response = TrsProtobufs.TrsResponse.newBuilder()
+                    .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                    .setError(ex.getMessage())
+                    .build();
+        }
+        responseObserver.onNext(response);
+        System.out.println("Am trimis raspuns " + response.getType() + "\n");
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public StreamObserver<TrsProtobufs.TrsRequest> saveReservation(StreamObserver<TrsProtobufs.TrsResponse> responseObserver) {
+        System.out.println("Am primit request SAVE_RESERVATION");
+        return new StreamObserver<>() {
+            String errors = "";
+            int count = 0;
+            @Override
+            public void onNext(TrsProtobufs.TrsRequest request) {
+                try {
+                    reservationRepository.save(DtoUtils.fromReservationDto(request.getReservationDto()));
+                } catch (ValidatorException | RepositoryException e) {
+                    count++;
+                    if (count > 1) {
+                        errors = "Eroare la salvarea rezervarilor!";
+                    } else {
+                        errors = e.getMessage();
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                responseObserver.onCompleted();
+            }
+
+            @Override
+            public void onCompleted() {
+                TrsProtobufs.TrsResponse response;
+                if (Objects.equals(errors, "")) {
+                    response = TrsProtobufs.TrsResponse.newBuilder()
+                            .setType(TrsProtobufs.TrsResponse.Type.OK)
+                            .build();
+                } else {
+                    response = TrsProtobufs.TrsResponse.newBuilder()
+                            .setType(TrsProtobufs.TrsResponse.Type.ERROR)
+                            .setError(errors)
+                            .build();
+                }
+                responseObserver.onNext(response);
+                responseObserver.onCompleted();
+            }
+        };
     }
 
     @Override

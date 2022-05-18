@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import trs.model.Reservation;
 import trs.model.TheatreShow;
 import trs.model.validator.IValidator;
+import trs.model.validator.ValidatorException;
 import trs.persistence.IReservationRepository;
 import trs.persistence.repository.RepositoryException;
 
@@ -25,7 +26,27 @@ public class ReservationRepository implements IReservationRepository {
     }
 
     @Override
-    public void save(Reservation reservation) {
+    public Long save(Reservation reservation) throws ValidatorException, RepositoryException {
+        validator.validate(reservation);
+        logger.traceEntry("saving reservation {} ", reservation);
+
+        Reservation res = null;
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                res = (Reservation) session.save(reservation);
+                tx.commit();
+            } catch (RuntimeException ex) {
+                System.err.println("Insert error " + ex);
+                if (tx != null)
+                    tx.rollback();
+                throw new RepositoryException("Eroare la salvarea rezervarii!");
+            }
+        }
+
+        logger.traceExit();
+        return res.getId();
     }
 
     @Override

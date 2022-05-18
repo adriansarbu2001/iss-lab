@@ -5031,12 +5031,42 @@ public final class TrsProtobufs {
     trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder();
 
     /**
-     * <code>int64 id = 3;</code>
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     * @return Whether the reservationDto field is set.
+     */
+    boolean hasReservationDto();
+    /**
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     * @return The reservationDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDto();
+    /**
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtoOrBuilder();
+
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    boolean hasSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return The spectatorDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder();
+
+    /**
+     * <code>int64 id = 5;</code>
      * @return Whether the id field is set.
      */
     boolean hasId();
     /**
-     * <code>int64 id = 3;</code>
+     * <code>int64 id = 5;</code>
      * @return The id.
      */
     long getId();
@@ -5116,9 +5146,37 @@ public final class TrsProtobufs {
               payloadCase_ = 2;
               break;
             }
-            case 24: {
-              payload_ = input.readInt64();
+            case 26: {
+              trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder subBuilder = null;
+              if (payloadCase_ == 3) {
+                subBuilder = ((trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_).toBuilder();
+              }
+              payload_ =
+                  input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
               payloadCase_ = 3;
+              break;
+            }
+            case 34: {
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder subBuilder = null;
+              if (payloadCase_ == 4) {
+                subBuilder = ((trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_).toBuilder();
+              }
+              payload_ =
+                  input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+              payloadCase_ = 4;
+              break;
+            }
+            case 40: {
+              payload_ = input.readInt64();
+              payloadCase_ = 5;
               break;
             }
             default: {
@@ -5162,7 +5220,9 @@ public final class TrsProtobufs {
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       ADMINDTO(1),
       THEATRESHOWDTO(2),
-      ID(3),
+      RESERVATIONDTO(3),
+      SPECTATORDTO(4),
+      ID(5),
       PAYLOAD_NOT_SET(0);
       private final int value;
       private PayloadCase(int value) {
@@ -5182,7 +5242,9 @@ public final class TrsProtobufs {
         switch (value) {
           case 1: return ADMINDTO;
           case 2: return THEATRESHOWDTO;
-          case 3: return ID;
+          case 3: return RESERVATIONDTO;
+          case 4: return SPECTATORDTO;
+          case 5: return ID;
           case 0: return PAYLOAD_NOT_SET;
           default: return null;
         }
@@ -5260,22 +5322,84 @@ public final class TrsProtobufs {
       return trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto.getDefaultInstance();
     }
 
-    public static final int ID_FIELD_NUMBER = 3;
+    public static final int RESERVATIONDTO_FIELD_NUMBER = 3;
     /**
-     * <code>int64 id = 3;</code>
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     * @return Whether the reservationDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationDto() {
+      return payloadCase_ == 3;
+    }
+    /**
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     * @return The reservationDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDto() {
+      if (payloadCase_ == 3) {
+         return (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_;
+      }
+      return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+    }
+    /**
+     * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtoOrBuilder() {
+      if (payloadCase_ == 3) {
+         return (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_;
+      }
+      return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+    }
+
+    public static final int SPECTATORDTO_FIELD_NUMBER = 4;
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpectatorDto() {
+      return payloadCase_ == 4;
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     * @return The spectatorDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+      if (payloadCase_ == 4) {
+         return (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_;
+      }
+      return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+      if (payloadCase_ == 4) {
+         return (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_;
+      }
+      return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+    }
+
+    public static final int ID_FIELD_NUMBER = 5;
+    /**
+     * <code>int64 id = 5;</code>
      * @return Whether the id field is set.
      */
     @java.lang.Override
     public boolean hasId() {
-      return payloadCase_ == 3;
+      return payloadCase_ == 5;
     }
     /**
-     * <code>int64 id = 3;</code>
+     * <code>int64 id = 5;</code>
      * @return The id.
      */
     @java.lang.Override
     public long getId() {
-      if (payloadCase_ == 3) {
+      if (payloadCase_ == 5) {
         return (java.lang.Long) payload_;
       }
       return 0L;
@@ -5302,8 +5426,14 @@ public final class TrsProtobufs {
         output.writeMessage(2, (trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDto) payload_);
       }
       if (payloadCase_ == 3) {
+        output.writeMessage(3, (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_);
+      }
+      if (payloadCase_ == 4) {
+        output.writeMessage(4, (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_);
+      }
+      if (payloadCase_ == 5) {
         output.writeInt64(
-            3, (long)((java.lang.Long) payload_));
+            5, (long)((java.lang.Long) payload_));
       }
       unknownFields.writeTo(output);
     }
@@ -5324,8 +5454,16 @@ public final class TrsProtobufs {
       }
       if (payloadCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_);
+      }
+      if (payloadCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_);
+      }
+      if (payloadCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(
-              3, (long)((java.lang.Long) payload_));
+              5, (long)((java.lang.Long) payload_));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5353,6 +5491,14 @@ public final class TrsProtobufs {
               .equals(other.getTheatreShowDto())) return false;
           break;
         case 3:
+          if (!getReservationDto()
+              .equals(other.getReservationDto())) return false;
+          break;
+        case 4:
+          if (!getSpectatorDto()
+              .equals(other.getSpectatorDto())) return false;
+          break;
+        case 5:
           if (getId()
               != other.getId()) return false;
           break;
@@ -5380,6 +5526,14 @@ public final class TrsProtobufs {
           hash = (53 * hash) + getTheatreShowDto().hashCode();
           break;
         case 3:
+          hash = (37 * hash) + RESERVATIONDTO_FIELD_NUMBER;
+          hash = (53 * hash) + getReservationDto().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + SPECTATORDTO_FIELD_NUMBER;
+          hash = (53 * hash) + getSpectatorDto().hashCode();
+          break;
+        case 5:
           hash = (37 * hash) + ID_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
               getId());
@@ -5563,6 +5717,20 @@ public final class TrsProtobufs {
           }
         }
         if (payloadCase_ == 3) {
+          if (reservationDtoBuilder_ == null) {
+            result.payload_ = payload_;
+          } else {
+            result.payload_ = reservationDtoBuilder_.build();
+          }
+        }
+        if (payloadCase_ == 4) {
+          if (spectatorDtoBuilder_ == null) {
+            result.payload_ = payload_;
+          } else {
+            result.payload_ = spectatorDtoBuilder_.build();
+          }
+        }
+        if (payloadCase_ == 5) {
           result.payload_ = payload_;
         }
         result.payloadCase_ = payloadCase_;
@@ -5621,6 +5789,14 @@ public final class TrsProtobufs {
           }
           case THEATRESHOWDTO: {
             mergeTheatreShowDto(other.getTheatreShowDto());
+            break;
+          }
+          case RESERVATIONDTO: {
+            mergeReservationDto(other.getReservationDto());
+            break;
+          }
+          case SPECTATORDTO: {
+            mergeSpectatorDto(other.getSpectatorDto());
             break;
           }
           case ID: {
@@ -5959,40 +6135,324 @@ public final class TrsProtobufs {
         return theatreShowDtoBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> reservationDtoBuilder_;
       /**
-       * <code>int64 id = 3;</code>
-       * @return Whether the id field is set.
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       * @return Whether the reservationDto field is set.
        */
-      public boolean hasId() {
+      @java.lang.Override
+      public boolean hasReservationDto() {
         return payloadCase_ == 3;
       }
       /**
-       * <code>int64 id = 3;</code>
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       * @return The reservationDto.
+       */
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto getReservationDto() {
+        if (reservationDtoBuilder_ == null) {
+          if (payloadCase_ == 3) {
+            return (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_;
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+        } else {
+          if (payloadCase_ == 3) {
+            return reservationDtoBuilder_.getMessage();
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      public Builder setReservationDto(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto value) {
+        if (reservationDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          reservationDtoBuilder_.setMessage(value);
+        }
+        payloadCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      public Builder setReservationDto(
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder builderForValue) {
+        if (reservationDtoBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          reservationDtoBuilder_.setMessage(builderForValue.build());
+        }
+        payloadCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      public Builder mergeReservationDto(trs.network.protobuffprotocol.TrsProtobufs.ReservationDto value) {
+        if (reservationDtoBuilder_ == null) {
+          if (payloadCase_ == 3 &&
+              payload_ != trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance()) {
+            payload_ = trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.newBuilder((trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          if (payloadCase_ == 3) {
+            reservationDtoBuilder_.mergeFrom(value);
+          } else {
+            reservationDtoBuilder_.setMessage(value);
+          }
+        }
+        payloadCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      public Builder clearReservationDto() {
+        if (reservationDtoBuilder_ == null) {
+          if (payloadCase_ == 3) {
+            payloadCase_ = 0;
+            payload_ = null;
+            onChanged();
+          }
+        } else {
+          if (payloadCase_ == 3) {
+            payloadCase_ = 0;
+            payload_ = null;
+          }
+          reservationDtoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder getReservationDtoBuilder() {
+        return getReservationDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder getReservationDtoOrBuilder() {
+        if ((payloadCase_ == 3) && (reservationDtoBuilder_ != null)) {
+          return reservationDtoBuilder_.getMessageOrBuilder();
+        } else {
+          if (payloadCase_ == 3) {
+            return (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_;
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.chat.protocol.ReservationDto reservationDto = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder> 
+          getReservationDtoFieldBuilder() {
+        if (reservationDtoBuilder_ == null) {
+          if (!(payloadCase_ == 3)) {
+            payload_ = trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.getDefaultInstance();
+          }
+          reservationDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.ReservationDto, trs.network.protobuffprotocol.TrsProtobufs.ReservationDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.ReservationDtoOrBuilder>(
+                  (trs.network.protobuffprotocol.TrsProtobufs.ReservationDto) payload_,
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        payloadCase_ = 3;
+        onChanged();;
+        return reservationDtoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> spectatorDtoBuilder_;
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       * @return Whether the spectatorDto field is set.
+       */
+      @java.lang.Override
+      public boolean hasSpectatorDto() {
+        return payloadCase_ == 4;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       * @return The spectatorDto.
+       */
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          if (payloadCase_ == 4) {
+            return (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_;
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+        } else {
+          if (payloadCase_ == 4) {
+            return spectatorDtoBuilder_.getMessage();
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder setSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(value);
+        }
+        payloadCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder setSpectatorDto(
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder builderForValue) {
+        if (spectatorDtoBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(builderForValue.build());
+        }
+        payloadCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder mergeSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (payloadCase_ == 4 &&
+              payload_ != trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance()) {
+            payload_ = trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.newBuilder((trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          if (payloadCase_ == 4) {
+            spectatorDtoBuilder_.mergeFrom(value);
+          } else {
+            spectatorDtoBuilder_.setMessage(value);
+          }
+        }
+        payloadCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public Builder clearSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          if (payloadCase_ == 4) {
+            payloadCase_ = 0;
+            payload_ = null;
+            onChanged();
+          }
+        } else {
+          if (payloadCase_ == 4) {
+            payloadCase_ = 0;
+            payload_ = null;
+          }
+          spectatorDtoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder getSpectatorDtoBuilder() {
+        return getSpectatorDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      @java.lang.Override
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+        if ((payloadCase_ == 4) && (spectatorDtoBuilder_ != null)) {
+          return spectatorDtoBuilder_.getMessageOrBuilder();
+        } else {
+          if (payloadCase_ == 4) {
+            return (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_;
+          }
+          return trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> 
+          getSpectatorDtoFieldBuilder() {
+        if (spectatorDtoBuilder_ == null) {
+          if (!(payloadCase_ == 4)) {
+            payload_ = trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance();
+          }
+          spectatorDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder>(
+                  (trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto) payload_,
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        payloadCase_ = 4;
+        onChanged();;
+        return spectatorDtoBuilder_;
+      }
+
+      /**
+       * <code>int64 id = 5;</code>
+       * @return Whether the id field is set.
+       */
+      public boolean hasId() {
+        return payloadCase_ == 5;
+      }
+      /**
+       * <code>int64 id = 5;</code>
        * @return The id.
        */
       public long getId() {
-        if (payloadCase_ == 3) {
+        if (payloadCase_ == 5) {
           return (java.lang.Long) payload_;
         }
         return 0L;
       }
       /**
-       * <code>int64 id = 3;</code>
+       * <code>int64 id = 5;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
       public Builder setId(long value) {
-        payloadCase_ = 3;
+        payloadCase_ = 5;
         payload_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 id = 3;</code>
+       * <code>int64 id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        if (payloadCase_ == 3) {
+        if (payloadCase_ == 5) {
           payloadCase_ = 0;
           payload_ = null;
           onChanged();
@@ -6188,6 +6648,21 @@ public final class TrsProtobufs {
      * <code>.chat.protocol.TheatreShowDto theatreShowDto = 7;</code>
      */
     trs.network.protobuffprotocol.TrsProtobufs.TheatreShowDtoOrBuilder getTheatreShowDtoOrBuilder();
+
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    boolean hasSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     * @return The spectatorDto.
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto();
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     */
+    trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder();
   }
   /**
    * Protobuf type {@code chat.protocol.TrsResponse}
@@ -6301,6 +6776,19 @@ public final class TrsProtobufs {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(theatreShowDto_);
                 theatreShowDto_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder subBuilder = null;
+              if (spectatorDto_ != null) {
+                subBuilder = spectatorDto_.toBuilder();
+              }
+              spectatorDto_ = input.readMessage(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spectatorDto_);
+                spectatorDto_ = subBuilder.buildPartial();
               }
 
               break;
@@ -6720,6 +7208,32 @@ public final class TrsProtobufs {
       return getTheatreShowDto();
     }
 
+    public static final int SPECTATORDTO_FIELD_NUMBER = 8;
+    private trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto spectatorDto_;
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     * @return Whether the spectatorDto field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpectatorDto() {
+      return spectatorDto_ != null;
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     * @return The spectatorDto.
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+      return spectatorDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+    }
+    /**
+     * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+     */
+    @java.lang.Override
+    public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+      return getSpectatorDto();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6754,6 +7268,9 @@ public final class TrsProtobufs {
       }
       if (theatreShowDto_ != null) {
         output.writeMessage(7, getTheatreShowDto());
+      }
+      if (spectatorDto_ != null) {
+        output.writeMessage(8, getSpectatorDto());
       }
       unknownFields.writeTo(output);
     }
@@ -6791,6 +7308,10 @@ public final class TrsProtobufs {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getTheatreShowDto());
       }
+      if (spectatorDto_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getSpectatorDto());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6824,6 +7345,11 @@ public final class TrsProtobufs {
       if (hasTheatreShowDto()) {
         if (!getTheatreShowDto()
             .equals(other.getTheatreShowDto())) return false;
+      }
+      if (hasSpectatorDto() != other.hasSpectatorDto()) return false;
+      if (hasSpectatorDto()) {
+        if (!getSpectatorDto()
+            .equals(other.getSpectatorDto())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -6859,6 +7385,10 @@ public final class TrsProtobufs {
       if (hasTheatreShowDto()) {
         hash = (37 * hash) + THEATRESHOWDTO_FIELD_NUMBER;
         hash = (53 * hash) + getTheatreShowDto().hashCode();
+      }
+      if (hasSpectatorDto()) {
+        hash = (37 * hash) + SPECTATORDTO_FIELD_NUMBER;
+        hash = (53 * hash) + getSpectatorDto().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7030,6 +7560,12 @@ public final class TrsProtobufs {
           theatreShowDto_ = null;
           theatreShowDtoBuilder_ = null;
         }
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = null;
+        } else {
+          spectatorDto_ = null;
+          spectatorDtoBuilder_ = null;
+        }
         return this;
       }
 
@@ -7095,6 +7631,11 @@ public final class TrsProtobufs {
           result.theatreShowDto_ = theatreShowDto_;
         } else {
           result.theatreShowDto_ = theatreShowDtoBuilder_.build();
+        }
+        if (spectatorDtoBuilder_ == null) {
+          result.spectatorDto_ = spectatorDto_;
+        } else {
+          result.spectatorDto_ = spectatorDtoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7234,6 +7775,9 @@ public final class TrsProtobufs {
         }
         if (other.hasTheatreShowDto()) {
           mergeTheatreShowDto(other.getTheatreShowDto());
+        }
+        if (other.hasSpectatorDto()) {
+          mergeSpectatorDto(other.getSpectatorDto());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8372,6 +8916,125 @@ public final class TrsProtobufs {
         }
         return theatreShowDtoBuilder_;
       }
+
+      private trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto spectatorDto_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> spectatorDtoBuilder_;
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       * @return Whether the spectatorDto field is set.
+       */
+      public boolean hasSpectatorDto() {
+        return spectatorDtoBuilder_ != null || spectatorDto_ != null;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       * @return The spectatorDto.
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto getSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          return spectatorDto_ == null ? trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+        } else {
+          return spectatorDtoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public Builder setSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          spectatorDto_ = value;
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public Builder setSpectatorDto(
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder builderForValue) {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = builderForValue.build();
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public Builder mergeSpectatorDto(trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto value) {
+        if (spectatorDtoBuilder_ == null) {
+          if (spectatorDto_ != null) {
+            spectatorDto_ =
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.newBuilder(spectatorDto_).mergeFrom(value).buildPartial();
+          } else {
+            spectatorDto_ = value;
+          }
+          onChanged();
+        } else {
+          spectatorDtoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public Builder clearSpectatorDto() {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDto_ = null;
+          onChanged();
+        } else {
+          spectatorDto_ = null;
+          spectatorDtoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder getSpectatorDtoBuilder() {
+        
+        onChanged();
+        return getSpectatorDtoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      public trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder getSpectatorDtoOrBuilder() {
+        if (spectatorDtoBuilder_ != null) {
+          return spectatorDtoBuilder_.getMessageOrBuilder();
+        } else {
+          return spectatorDto_ == null ?
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.getDefaultInstance() : spectatorDto_;
+        }
+      }
+      /**
+       * <code>.chat.protocol.SpectatorDto spectatorDto = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder> 
+          getSpectatorDtoFieldBuilder() {
+        if (spectatorDtoBuilder_ == null) {
+          spectatorDtoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDto.Builder, trs.network.protobuffprotocol.TrsProtobufs.SpectatorDtoOrBuilder>(
+                  getSpectatorDto(),
+                  getParentForChildren(),
+                  isClean());
+          spectatorDto_ = null;
+        }
+        return spectatorDtoBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8488,43 +9151,51 @@ public final class TrsProtobufs {
       "\030\002 \001(\0132\035.chat.protocol.TheatreShowDto\022\'\n" +
       "\007seatDto\030\003 \001(\0132\026.chat.protocol.SeatDto\0221" +
       "\n\014spectatorDto\030\004 \001(\0132\033.chat.protocol.Spe" +
-      "ctatorDto\"\213\001\n\nTrsRequest\022+\n\010adminDto\030\001 \001" +
+      "ctatorDto\"\371\001\n\nTrsRequest\022+\n\010adminDto\030\001 \001" +
       "(\0132\027.chat.protocol.AdminDtoH\000\0227\n\016theatre" +
       "ShowDto\030\002 \001(\0132\035.chat.protocol.TheatreSho" +
-      "wDtoH\000\022\014\n\002id\030\003 \001(\003H\000B\t\n\007payload\"\233\003\n\013TrsR" +
-      "esponse\022-\n\004type\030\001 \001(\0162\037.chat.protocol.Tr" +
-      "sResponse.Type\022\r\n\005error\030\002 \001(\t\0226\n\017theatre" +
-      "ShowDtos\030\003 \003(\0132\035.chat.protocol.TheatreSh" +
-      "owDto\022(\n\010seatDtos\030\004 \003(\0132\026.chat.protocol." +
-      "SeatDto\0226\n\017reservationDtos\030\005 \003(\0132\035.chat." +
-      "protocol.ReservationDto\022)\n\010adminDto\030\006 \001(" +
-      "\0132\027.chat.protocol.AdminDto\0225\n\016theatreSho" +
-      "wDto\030\007 \001(\0132\035.chat.protocol.TheatreShowDt" +
-      "o\"R\n\004Type\022\013\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\t\n\005ERROR\020" +
-      "\002\022\030\n\024RELOAD_THEATRE_SHOWS\020\003\022\020\n\014RELOAD_SE" +
-      "ATS\020\0042\321\006\n\nTrsService\022S\n\026addTheatreShowOb" +
-      "server\022\031.chat.protocol.TrsRequest\032\032.chat" +
-      ".protocol.TrsResponse(\0010\001\022L\n\017addSeatObse" +
-      "rver\022\031.chat.protocol.TrsRequest\032\032.chat.p" +
-      "rotocol.TrsResponse(\0010\001\022>\n\005login\022\031.chat." +
-      "protocol.TrsRequest\032\032.chat.protocol.TrsR" +
-      "esponse\022?\n\006logout\022\031.chat.protocol.TrsReq" +
-      "uest\032\032.chat.protocol.TrsResponse\022K\n\022find" +
-      "AllTheatreShow\022\031.chat.protocol.TrsReques" +
-      "t\032\032.chat.protocol.TrsResponse\022E\n\014findAll" +
-      "Seats\022\031.chat.protocol.TrsRequest\032\032.chat." +
-      "protocol.TrsResponse\022Y\n findAllReservati" +
-      "onsByTheatreShow\022\031.chat.protocol.TrsRequ" +
-      "est\032\032.chat.protocol.TrsResponse\022N\n\025findT" +
-      "odaysTheatreShow\022\031.chat.protocol.TrsRequ" +
-      "est\032\032.chat.protocol.TrsResponse\022H\n\017saveT" +
-      "heatreShow\022\031.chat.protocol.TrsRequest\032\032." +
-      "chat.protocol.TrsResponse\022J\n\021updateTheat" +
-      "reShow\022\031.chat.protocol.TrsRequest\032\032.chat" +
-      ".protocol.TrsResponse\022J\n\021deleteTheatreSh" +
-      "ow\022\031.chat.protocol.TrsRequest\032\032.chat.pro" +
-      "tocol.TrsResponseB-\n\035trs.network.protobu" +
-      "ffprotocolB\014TrsProtobufsb\006proto3"
+      "wDtoH\000\0227\n\016reservationDto\030\003 \001(\0132\035.chat.pr" +
+      "otocol.ReservationDtoH\000\0223\n\014spectatorDto\030" +
+      "\004 \001(\0132\033.chat.protocol.SpectatorDtoH\000\022\014\n\002" +
+      "id\030\005 \001(\003H\000B\t\n\007payload\"\316\003\n\013TrsResponse\022-\n" +
+      "\004type\030\001 \001(\0162\037.chat.protocol.TrsResponse." +
+      "Type\022\r\n\005error\030\002 \001(\t\0226\n\017theatreShowDtos\030\003" +
+      " \003(\0132\035.chat.protocol.TheatreShowDto\022(\n\010s" +
+      "eatDtos\030\004 \003(\0132\026.chat.protocol.SeatDto\0226\n" +
+      "\017reservationDtos\030\005 \003(\0132\035.chat.protocol.R" +
+      "eservationDto\022)\n\010adminDto\030\006 \001(\0132\027.chat.p" +
+      "rotocol.AdminDto\0225\n\016theatreShowDto\030\007 \001(\013" +
+      "2\035.chat.protocol.TheatreShowDto\0221\n\014spect" +
+      "atorDto\030\010 \001(\0132\033.chat.protocol.SpectatorD" +
+      "to\"R\n\004Type\022\013\n\007UNKNOWN\020\000\022\006\n\002OK\020\001\022\t\n\005ERROR" +
+      "\020\002\022\030\n\024RELOAD_THEATRE_SHOWS\020\003\022\020\n\014RELOAD_S" +
+      "EATS\020\0042\345\007\n\nTrsService\022S\n\026addTheatreShowO" +
+      "bserver\022\031.chat.protocol.TrsRequest\032\032.cha" +
+      "t.protocol.TrsResponse(\0010\001\022L\n\017addSeatObs" +
+      "erver\022\031.chat.protocol.TrsRequest\032\032.chat." +
+      "protocol.TrsResponse(\0010\001\022>\n\005login\022\031.chat" +
+      ".protocol.TrsRequest\032\032.chat.protocol.Trs" +
+      "Response\022?\n\006logout\022\031.chat.protocol.TrsRe" +
+      "quest\032\032.chat.protocol.TrsResponse\022K\n\022fin" +
+      "dAllTheatreShow\022\031.chat.protocol.TrsReque" +
+      "st\032\032.chat.protocol.TrsResponse\022E\n\014findAl" +
+      "lSeats\022\031.chat.protocol.TrsRequest\032\032.chat" +
+      ".protocol.TrsResponse\022Y\n findAllReservat" +
+      "ionsByTheatreShow\022\031.chat.protocol.TrsReq" +
+      "uest\032\032.chat.protocol.TrsResponse\022N\n\025find" +
+      "TodaysTheatreShow\022\031.chat.protocol.TrsReq" +
+      "uest\032\032.chat.protocol.TrsResponse\022F\n\rsave" +
+      "Spectator\022\031.chat.protocol.TrsRequest\032\032.c" +
+      "hat.protocol.TrsResponse\022J\n\017saveReservat" +
+      "ion\022\031.chat.protocol.TrsRequest\032\032.chat.pr" +
+      "otocol.TrsResponse(\001\022H\n\017saveTheatreShow\022" +
+      "\031.chat.protocol.TrsRequest\032\032.chat.protoc" +
+      "ol.TrsResponse\022J\n\021updateTheatreShow\022\031.ch" +
+      "at.protocol.TrsRequest\032\032.chat.protocol.T" +
+      "rsResponse\022J\n\021deleteTheatreShow\022\031.chat.p" +
+      "rotocol.TrsRequest\032\032.chat.protocol.TrsRe" +
+      "sponseB-\n\035trs.network.protobuffprotocolB" +
+      "\014TrsProtobufsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8571,13 +9242,13 @@ public final class TrsProtobufs {
     internal_static_chat_protocol_TrsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_chat_protocol_TrsRequest_descriptor,
-        new java.lang.String[] { "AdminDto", "TheatreShowDto", "Id", "Payload", });
+        new java.lang.String[] { "AdminDto", "TheatreShowDto", "ReservationDto", "SpectatorDto", "Id", "Payload", });
     internal_static_chat_protocol_TrsResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_chat_protocol_TrsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_chat_protocol_TrsResponse_descriptor,
-        new java.lang.String[] { "Type", "Error", "TheatreShowDtos", "SeatDtos", "ReservationDtos", "AdminDto", "TheatreShowDto", });
+        new java.lang.String[] { "Type", "Error", "TheatreShowDtos", "SeatDtos", "ReservationDtos", "AdminDto", "TheatreShowDto", "SpectatorDto", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

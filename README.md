@@ -1,4 +1,4 @@
-# iss-lab
+# theatre-reservation-system
 
 ## Stacks:
 - Java
@@ -7,5 +7,5 @@
 - Hibernate
 
 ## The database contains 2 users for testing purposes:
-- **username:** admin1; **password:** admin1
-- **username:** admin2; **password:** admin2
+- **username:** admin1 - **password:** admin1
+- **username:** admin2 - **password:** admin2

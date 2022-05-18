@@ -264,6 +264,68 @@ public final class TrsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveSpectatorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "saveSpectator",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveSpectatorMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveSpectatorMethod;
+    if ((getSaveSpectatorMethod = TrsServiceGrpc.getSaveSpectatorMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getSaveSpectatorMethod = TrsServiceGrpc.getSaveSpectatorMethod) == null) {
+          TrsServiceGrpc.getSaveSpectatorMethod = getSaveSpectatorMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveSpectator"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("saveSpectator"))
+              .build();
+        }
+      }
+    }
+    return getSaveSpectatorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveReservationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "saveReservation",
+      requestType = trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.class,
+      responseType = trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+      trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveReservationMethod() {
+    io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveReservationMethod;
+    if ((getSaveReservationMethod = TrsServiceGrpc.getSaveReservationMethod) == null) {
+      synchronized (TrsServiceGrpc.class) {
+        if ((getSaveReservationMethod = TrsServiceGrpc.getSaveReservationMethod) == null) {
+          TrsServiceGrpc.getSaveReservationMethod = getSaveReservationMethod =
+              io.grpc.MethodDescriptor.<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest, trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveReservation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  trs.network.protobuffprotocol.TrsProtobufs.TrsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TrsServiceMethodDescriptorSupplier("saveReservation"))
+              .build();
+        }
+      }
+    }
+    return getSaveReservationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
       trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> getSaveTheatreShowMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -462,6 +524,20 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public void saveSpectator(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveSpectatorMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest> saveReservation(
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSaveReservationMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void saveTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveTheatreShowMethod(), responseObserver);
@@ -539,6 +615,20 @@ public final class TrsServiceGrpc {
                 trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
                 trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
                   this, METHODID_FIND_TODAYS_THEATRE_SHOW)))
+          .addMethod(
+            getSaveSpectatorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_SAVE_SPECTATOR)))
+          .addMethod(
+            getSaveReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                trs.network.protobuffprotocol.TrsProtobufs.TrsRequest,
+                trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>(
+                  this, METHODID_SAVE_RESERVATION)))
           .addMethod(
             getSaveTheatreShowMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -644,6 +734,22 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public void saveSpectator(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSaveSpectatorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsRequest> saveReservation(
+        io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getSaveReservationMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
     public void saveTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request,
         io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -721,6 +827,13 @@ public final class TrsServiceGrpc {
     public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse findTodaysTheatreShow(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindTodaysTheatreShowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public trs.network.protobuffprotocol.TrsProtobufs.TrsResponse saveSpectator(trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveSpectatorMethod(), getCallOptions(), request);
     }
 
     /**
@@ -809,6 +922,14 @@ public final class TrsServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> saveSpectator(
+        trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSaveSpectatorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse> saveTheatreShow(
         trs.network.protobuffprotocol.TrsProtobufs.TrsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -838,11 +959,13 @@ public final class TrsServiceGrpc {
   private static final int METHODID_FIND_ALL_SEATS = 3;
   private static final int METHODID_FIND_ALL_RESERVATIONS_BY_THEATRE_SHOW = 4;
   private static final int METHODID_FIND_TODAYS_THEATRE_SHOW = 5;
-  private static final int METHODID_SAVE_THEATRE_SHOW = 6;
-  private static final int METHODID_UPDATE_THEATRE_SHOW = 7;
-  private static final int METHODID_DELETE_THEATRE_SHOW = 8;
-  private static final int METHODID_ADD_THEATRE_SHOW_OBSERVER = 9;
-  private static final int METHODID_ADD_SEAT_OBSERVER = 10;
+  private static final int METHODID_SAVE_SPECTATOR = 6;
+  private static final int METHODID_SAVE_THEATRE_SHOW = 7;
+  private static final int METHODID_UPDATE_THEATRE_SHOW = 8;
+  private static final int METHODID_DELETE_THEATRE_SHOW = 9;
+  private static final int METHODID_ADD_THEATRE_SHOW_OBSERVER = 10;
+  private static final int METHODID_ADD_SEAT_OBSERVER = 11;
+  private static final int METHODID_SAVE_RESERVATION = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -885,6 +1008,10 @@ public final class TrsServiceGrpc {
           serviceImpl.findTodaysTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
           break;
+        case METHODID_SAVE_SPECTATOR:
+          serviceImpl.saveSpectator((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+          break;
         case METHODID_SAVE_THEATRE_SHOW:
           serviceImpl.saveTheatreShow((trs.network.protobuffprotocol.TrsProtobufs.TrsRequest) request,
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
@@ -912,6 +1039,9 @@ public final class TrsServiceGrpc {
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
         case METHODID_ADD_SEAT_OBSERVER:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.addSeatObserver(
+              (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
+        case METHODID_SAVE_RESERVATION:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.saveReservation(
               (io.grpc.stub.StreamObserver<trs.network.protobuffprotocol.TrsProtobufs.TrsResponse>) responseObserver);
         default:
           throw new AssertionError();
@@ -972,6 +1102,8 @@ public final class TrsServiceGrpc {
               .addMethod(getFindAllSeatsMethod())
               .addMethod(getFindAllReservationsByTheatreShowMethod())
               .addMethod(getFindTodaysTheatreShowMethod())
+              .addMethod(getSaveSpectatorMethod())
+              .addMethod(getSaveReservationMethod())
               .addMethod(getSaveTheatreShowMethod())
               .addMethod(getUpdateTheatreShowMethod())
               .addMethod(getDeleteTheatreShowMethod())

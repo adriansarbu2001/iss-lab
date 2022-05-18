@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import trs.model.Spectator;
 import trs.model.validator.IValidator;
+import trs.model.validator.ValidatorException;
 import trs.persistence.ISpectatorRepository;
 import trs.persistence.repository.RepositoryException;
 
@@ -24,7 +25,27 @@ public class SpectatorRepository implements ISpectatorRepository {
     }
 
     @Override
-    public void save(Spectator spectator) {
+    public Long save(Spectator spectator) throws ValidatorException, RepositoryException  {
+        validator.validate(spectator);
+        logger.traceEntry("saving spectator {} ", spectator);
+
+        Long id = null;
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = null;
+            try {
+                tx = session.beginTransaction();
+                id = (Long)session.save(spectator);
+                tx.commit();
+            } catch (RuntimeException ex) {
+                System.err.println("Insert error " + ex);
+                if (tx != null)
+                    tx.rollback();
+                throw new RepositoryException("Eroare la salvarea spectatorului!");
+            }
+        }
+
+        logger.traceExit();
+        return id;
     }
 
     @Override

@@ -16,6 +16,8 @@ import trs.network.protobuffprotocol.TrsServiceGrpc;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 
 public class AdminController {
@@ -189,6 +191,17 @@ public class AdminController {
         String name = textFieldNume.getText();
         LocalDate date = datePickerData.getValue();
 
+        if (Objects.equals(date, LocalDate.now())) {
+            boolean ok = showWarning("ATENTIE",
+                    "ATENTIE",
+                    """
+                           Daca doresti sa adaugi un spectacol de teatru pentru data de azi va trebui sa repornesti toate terminalele!
+                           Continui?
+                           """,
+                    Alert.AlertType.WARNING);
+            if (!ok) return;
+        }
+
         if (date == null) {
             showNotification("Data invalida!", Alert.AlertType.ERROR);
             return;
@@ -210,9 +223,7 @@ public class AdminController {
             @Override
             public void onNext(TrsProtobufs.TrsResponse response) {
                 if (response.getType() == TrsProtobufs.TrsResponse.Type.ERROR) {
-                    Platform.runLater(() -> {
-                        showNotification(response.getError(), Alert.AlertType.ERROR);
-                    });
+                    Platform.runLater(() -> showNotification(response.getError(), Alert.AlertType.ERROR));
                 }
             }
 
@@ -243,6 +254,17 @@ public class AdminController {
         String name = textFieldNume.getText();
         LocalDate date = datePickerData.getValue();
 
+        if (Objects.equals(date, LocalDate.now()) || parent.getUserData() != null && Objects.equals(id, ((TheatreShow) parent.getUserData()).getId().toString())) {
+            boolean ok = showWarning("ATENTIE",
+                    "ATENTIE",
+                    """
+                           Daca doresti sa modifici spectacolul de teatru din data de azi va trebui sa repornesti toate terminalele!
+                           Continui?
+                           """,
+                    Alert.AlertType.WARNING);
+            if (!ok) return;
+        }
+
         if (date == null) {
             showNotification("Data invalida!", Alert.AlertType.ERROR);
             return;
@@ -271,9 +293,7 @@ public class AdminController {
             @Override
             public void onNext(TrsProtobufs.TrsResponse response) {
                 if (response.getType() == TrsProtobufs.TrsResponse.Type.ERROR) {
-                    Platform.runLater(() -> {
-                        showNotification(response.getError(), Alert.AlertType.ERROR);
-                    });
+                    Platform.runLater(() -> showNotification(response.getError(), Alert.AlertType.ERROR));
                 }
             }
 
@@ -302,6 +322,18 @@ public class AdminController {
     public void onButtonStergeClick() {
         String id = textFieldIdSpectacol.getText();
 
+        if (parent.getUserData() != null && Objects.equals(id, ((TheatreShow) parent.getUserData()).getId().toString())) {
+            boolean ok = showWarning("ATENTIE",
+                    "ATENTIE",
+                    """
+                           Daca doresti sa stergi spectacolul de teatru din data de azi va trebui sa repornesti toate terminalele!
+                           Toate rezervarile vor fi invalidate!
+                           Continui?
+                           """,
+                    Alert.AlertType.WARNING);
+            if (!ok) return;
+        }
+
         if (id.equals("")) {
             showNotification("ID-ul trebuie sa fie numar!", Alert.AlertType.ERROR);
             return;
@@ -323,14 +355,10 @@ public class AdminController {
             @Override
             public void onNext(TrsProtobufs.TrsResponse response) {
                 if (response.getType() == TrsProtobufs.TrsResponse.Type.OK) {
-                    Platform.runLater(() -> {
-                        clearFields();
-                    });
+                    Platform.runLater(() -> clearFields());
                 }
                 if (response.getType() == TrsProtobufs.TrsResponse.Type.ERROR) {
-                    Platform.runLater(() -> {
-                        showNotification(response.getError(), Alert.AlertType.ERROR);
-                    });
+                    Platform.runLater(() -> showNotification(response.getError(), Alert.AlertType.ERROR));
                 }
             }
 
@@ -354,6 +382,27 @@ public class AdminController {
         }
 
         observer.onNext(null);
+    }
+
+    public boolean showWarning(String title, String header, String content, Alert.AlertType alertType) {
+        final Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
+
+        Button yesButton = (Button) alert.getDialogPane().lookupButton( ButtonType.YES );
+        yesButton.setDefaultButton( false );
+        yesButton.setText("Da");
+
+        Button noButton = (Button) alert.getDialogPane().lookupButton( ButtonType.NO );
+        noButton.setDefaultButton( true );
+        noButton.setText("Nu");
+
+        final Optional<ButtonType> result = alert.showAndWait();
+        return result.filter(buttonType -> buttonType == ButtonType.YES).isPresent();
     }
 
     private void showNotification(String message, Alert.AlertType type) {

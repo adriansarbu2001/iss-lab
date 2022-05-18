@@ -1,6 +1,7 @@
 package trs.client.controller;
 
 import io.grpc.stub.StreamObserver;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import trs.client.DtoUtils;
-import trs.model.Reservation;
 import trs.model.Seat;
 import trs.model.TheatreShow;
 import trs.network.protobuffprotocol.TrsProtobufs;
@@ -177,18 +177,27 @@ public class MainController {
                         @Override
                         protected void updateItem(Seat item, boolean empty) {
                             super.updateItem(item, empty);
-                            if (item == null)
+                            if (item == null) {
                                 setStyle("");
-                            else if (ids.contains(item.getId()))
+                            }
+                            else if (ids.contains(item.getId())) {
                                 setStyle("-fx-background-color: #ff8080;");
-                            else
+                                setDisable(true);
+                            }
+                            else {
                                 setStyle("-fx-background-color: #80ff80;");
+                                setDisable(false);
+                            }
                         }
                     });
                 }
                 if (response.getType() == TrsProtobufs.TrsResponse.Type.ERROR) {
                     showNotification(response.getError(), Alert.AlertType.ERROR);
                 }
+                Platform.runLater(() -> {
+                    tableViewSeats.getSelectionModel().clearSelection();
+                    tableViewSeats.refresh();
+                });
             }
 
             @Override
@@ -215,7 +224,7 @@ public class MainController {
         return new StreamObserver<>() {
             @Override
             public void onNext(TrsProtobufs.TrsResponse value) {
-                refreshTable();
+                Platform.runLater(() -> refreshTable());
             }
 
             @Override
@@ -241,10 +250,9 @@ public class MainController {
             stage.setTitle("Login");
             stage.setScene(scene);
             Stage primaryStage = (Stage) this.buttonAutentificareAdmin.getScene().getWindow();
+            primaryStage.setUserData(currentTheatreShow);
 
-            stage.setOnCloseRequest(event -> {
-                primaryStage.show();
-            });
+            stage.setOnCloseRequest(event -> primaryStage.show());
 
             ctrl.setParent(primaryStage);
             primaryStage.hide();
@@ -255,7 +263,33 @@ public class MainController {
     }
 
     public void onButtonRezervaLocuriClick() {
-        showNotification("Inca nu e implementat!", Alert.AlertType.INFORMATION);
+        if (this.tableViewSeats.getSelectionModel().getSelectedItems().size() == 0) {
+            showNotification("Nu ati selectat nicio rezervare!", Alert.AlertType.ERROR);
+            return;
+        }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("reservation-view.fxml"));
+            Parent root = fxmlLoader.load();
+            ReservationController ctrl = fxmlLoader.getController();
+            ctrl.setServiceStub(this.trsServiceStub);
+            ctrl.setTheatreShow(this.currentTheatreShow);
+            ctrl.setSelectedSeats(this.tableViewSeats.getSelectionModel().getSelectedItems().stream().toList());
+            ctrl.setObserver(this.observer);
+            Scene scene = new Scene(root, 600, 300);
+            Stage stage = new Stage();
+            stage.setTitle("Rezerva loc");
+            stage.setScene(scene);
+            Stage primaryStage = (Stage) this.buttonRezervaLocuri.getScene().getWindow();
+            primaryStage.setUserData(currentTheatreShow);
+
+            stage.setOnCloseRequest(event -> primaryStage.show());
+
+            ctrl.setParent(primaryStage);
+            primaryStage.hide();
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onClose() {

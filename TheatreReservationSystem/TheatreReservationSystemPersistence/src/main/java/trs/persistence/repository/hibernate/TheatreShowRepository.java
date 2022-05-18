@@ -24,15 +24,16 @@ public class TheatreShowRepository implements ITheatreShowRepository {
     }
 
     @Override
-    public void save(TheatreShow theatreShow) throws ValidatorException, RepositoryException {
+    public Long save(TheatreShow theatreShow) throws ValidatorException, RepositoryException {
         validator.validate(theatreShow);
         logger.traceEntry("saving theatreShow {} ", theatreShow);
 
+        Long id = null;
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                session.save(theatreShow);
+                id = (Long)session.save(theatreShow);
                 tx.commit();
             } catch (RuntimeException ex) {
                 System.err.println("Insert error " + ex);
@@ -43,6 +44,7 @@ public class TheatreShowRepository implements ITheatreShowRepository {
         }
 
         logger.traceExit();
+        return id;
     }
 
     @Override

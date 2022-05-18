@@ -25,15 +25,16 @@ public class AdminRepository implements IAdminRepository {
     }
 
     @Override
-    public void save(Admin admin) throws ValidatorException, RepositoryException {
+    public Long save(Admin admin) throws ValidatorException, RepositoryException {
         validator.validate(admin);
         logger.traceEntry("saving admin {} ", admin);
 
+        Long id = null;
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = null;
             try {
                 tx = session.beginTransaction();
-                session.save(admin);
+                id = (Long)session.save(admin);
                 tx.commit();
             } catch (RuntimeException ex) {
                 System.err.println("Insert error " + ex);
@@ -44,6 +45,7 @@ public class AdminRepository implements IAdminRepository {
         }
 
         logger.traceExit();
+        return id;
     }
 
     @Override

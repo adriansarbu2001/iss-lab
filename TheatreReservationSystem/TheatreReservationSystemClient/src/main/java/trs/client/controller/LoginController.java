@@ -29,8 +29,7 @@ public class LoginController {
 
     @FXML
     public void initialize() {
-        textFieldUsername.setText("admin1");
-        passwordFieldPassword.setText("admin1");
+
     }
 
     public void setParent(Stage parent) {
@@ -64,6 +63,7 @@ public class LoginController {
                             stage.setTitle("Admin");
                             stage.setScene(scene);
                             Stage primaryStage = (Stage) buttonAutentificare.getScene().getWindow();
+                            primaryStage.setUserData(parent.getUserData());
 
                             stage.setOnCloseRequest(event -> {
                                 ctrl.logout();

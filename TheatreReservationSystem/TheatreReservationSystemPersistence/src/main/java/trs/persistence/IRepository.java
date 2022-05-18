@@ -6,7 +6,7 @@ import trs.persistence.repository.RepositoryException;
 
 public interface IRepository<ID, T extends IEntity<ID>> {
 
-    void save(T t) throws ValidatorException, RepositoryException;
+    ID save(T t) throws ValidatorException, RepositoryException;
 
     void delete(ID id) throws RepositoryException;
 
